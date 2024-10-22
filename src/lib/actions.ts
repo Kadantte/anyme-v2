@@ -11,3 +11,13 @@ export const getHeroes = async () => {
     throw error;
   }
 };
+
+export const getDetailAnime = async (id: number) => {
+  try {
+    const res = await axios.get(`https://api.jikan.moe/v4/anime/${id}/full`);
+    return res.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};

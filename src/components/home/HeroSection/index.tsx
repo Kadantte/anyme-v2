@@ -7,8 +7,11 @@ import { Bookmark, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import HeroLoading from './HeroLoading';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function HeroSection() {
+  const router = useRouter();
+
   const { data, isLoading, error } = useQuery({
     queryKey: ['heroes'],
     queryFn: getHeroes,
@@ -66,7 +69,10 @@ export default function HeroSection() {
                     : hero.synopsis}
                 </p>
                 <div className="flex gap-x-8 items-center mt-6 md:mt-8 lg:mt-10">
-                  <Button className="flex items-center justify-center gap-x-2 rounded-lg text-neutral-50 text-[13px] md:text-[17px] font-medium">
+                  <Button
+                    onClick={() => router.push(`/info/${hero.mal_id}`)}
+                    className="flex items-center justify-center gap-x-2 rounded-lg text-neutral-50 text-[13px] md:text-[17px] font-medium"
+                  >
                     <span>Show Detail</span> <ChevronRight size={20} />
                   </Button>
                   <Button
@@ -79,20 +85,29 @@ export default function HeroSection() {
               </div>
             </div>
           ))}
-
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-30">
-            {data.data.map((_: any, index: number) => (
-              <span
-                key={index}
-                onClick={() => handleIndicatorClick(index)}
-                className={`cursor-pointer size-2 rounded-full ${
-                  currentHero === index ? 'bg-neutral-50' : 'bg-neutral-400'
-                }`}
-              />
-            ))}
-          </div>
+          <Indicator
+            data={data}
+            handleIndicatorClick={handleIndicatorClick}
+            currentHero={currentHero}
+          />
         </div>
       )}
     </section>
   );
 }
+
+const Indicator = ({ data, handleIndicatorClick, currentHero }: any) => {
+  return (
+    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+      {data.data.map((_: any, index: number) => (
+        <span
+          key={index}
+          onClick={() => handleIndicatorClick(index)}
+          className={`cursor-pointer size-2 rounded-full ${
+            currentHero === index ? 'bg-neutral-50' : 'bg-neutral-400'
+          }`}
+        />
+      ))}
+    </div>
+  );
+};
