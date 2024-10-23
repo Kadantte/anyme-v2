@@ -38,7 +38,7 @@ export default function DetailAnime({ params }: { params: { id: number } }) {
 
         {/* Content */}
         <div className="flex flex-col lg:flex-row">
-          <div className="flex flex-col md:flex-row md:px-12 lg:px-20 md:py-8 lg:py-12 md:gap-x-8 lg:gap-x-12 lg:max-w-[70%]">
+          <div className="flex flex-col md:flex-row md:px-12 lg:pl-20 md:py-8 lg:py-12 md:gap-x-8 lg:gap-x-12 lg:max-w-[70%]">
             <Image
               src={data?.data.images.webp.large_image_url || '/placeholder.png'}
               alt={data?.data.title || 'No title'}
@@ -103,7 +103,7 @@ export default function DetailAnime({ params }: { params: { id: number } }) {
           </div>
 
           {/* Details */}
-          <div className="flex flex-col text-neutral-200 text-[13px] md:text-[15px] bg-neutral-950/50 p-4 md:px-12 lg:px-20 md:py-8 lg:py-12">
+          <div className="flex flex-col text-neutral-200 text-[13px] md:text-[15px] bg-neutral-950/50 p-4 md:px-12 lg:pr-20 md:py-8 lg:py-12">
             <div className="grid grid-cols-[0.9fr_2fr] md:grid-cols-[0.5fr_2fr] lg:grid-cols-[1.4fr_2fr] gap-y-1 md:gap-y-2 lg:gap-y-4 border-b border-neutral-800 pb-4 md:pb-8 lg:pb-12">
               <span>Japanese</span>
               <span>{data?.data.title_japanese}</span>
