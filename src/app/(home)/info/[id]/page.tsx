@@ -22,21 +22,23 @@ export default function DetailAnime({ params }: { params: { id: number } }) {
         height={500}
         className="w-full h-full object-cover rounded-lg absolute -z-10"
       />
-      <div className="flex flex-col bg-neutral-950/60 backdrop-blur">
+      <div className="flex flex-col bg-neutral-950/90 backdrop-blur">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-x-2 text-neutral-50 text-[15px] p-4">
+        <div className="flex items-center gap-x-2 text-neutral-50 text-[15px] p-4 md:hidden">
           <Link href="/" className="text-neutral-50">
             Home
           </Link>
           <ChevronRight className="size-6" />
           <span className="text-violet-500 font-bold">
-            {data?.data.title.substring(0, 20)}...
+            {data?.data.title.length > 20
+              ? `${data?.data.title.substring(0, 20)}...`
+              : data?.data.title}
           </span>
         </div>
 
         {/* Content */}
         <div className="flex flex-col lg:flex-row">
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col md:flex-row md:px-12 lg:px-20 md:py-8 lg:py-12 md:gap-x-8 lg:gap-x-12 lg:max-w-[70%]">
             <Image
               src={data?.data.images.webp.large_image_url || '/placeholder.png'}
               alt={data?.data.title || 'No title'}
@@ -47,25 +49,36 @@ export default function DetailAnime({ params }: { params: { id: number } }) {
             />
 
             {/* Description */}
-            <div className="flex flex-col px-4 pb-4">
-              <h1 className="text-[25px] font-bold text-neutral-50 mt-4">
+            <div className="flex flex-col px-4 pb-4 md:p-0">
+              <div className="hidden md:flex items-center gap-x-2 text-neutral-50 text-[15px] mb-2">
+                <Link href="/" className="text-neutral-50">
+                  Home
+                </Link>
+                <ChevronRight className="size-6" />
+                <span className="text-violet-500 font-bold">
+                  {data?.data.title.length > 40
+                    ? data?.data.title.substring(0, 40) + '...'
+                    : data?.data.title}
+                </span>
+              </div>
+              <h1 className="text-[25px] md:text-[30px] font-bold text-neutral-50 mt-4 md:mt-0">
                 {data?.data.title}
               </h1>
-              <div className="flex items-center gap-x-2 text-neutral-200 text-[15px] mt-2 mb-4">
-                <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 p-1 rounded-lg">
+              <div className="flex items-center gap-x-2 md:gap-x-4 text-neutral-200 text-[13px] md:text-[15px] mt-2 md:mt-4 mb-4 md:mb-6">
+                <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 p-1 md:px-2 rounded-lg">
                   {data?.data.type}
                 </span>
-                <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 p-1 rounded-lg">
+                <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 p-1 md:px-2 rounded-lg">
                   Eps {data?.data.episodes}
                 </span>
-                <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 p-1 rounded-lg">
+                <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 p-1 md:px-2 rounded-lg">
                   {data?.data.duration}
                 </span>
               </div>
-              <div className="flex items-center gap-x-2 mb-4">
+              <div className="flex items-center gap-x-2 md:gap-x-4 mb-4 md:mb-6">
                 <Button
                   variant={'ghost'}
-                  className="border border-neutral-200 rounded-lg text-neutral-200 text-[13px] md:text-[17px] font-medium"
+                  className="border border-neutral-200 rounded-lg text-neutral-200 text-[13px] md:text-[15px] font-medium"
                   asChild
                 >
                   <Link
@@ -78,30 +91,36 @@ export default function DetailAnime({ params }: { params: { id: number } }) {
                 </Button>
                 <Button
                   variant={'ghost'}
-                  className="flex items-center justify-center gap-x-2 text-neutral-200 text-[13px] md:text-[17px] font-medium"
+                  className="flex items-center justify-center gap-x-2 text-neutral-200 text-[13px] md:text-[15px] font-medium"
                 >
                   <Bookmark /> <span>Bookmark</span>
                 </Button>
               </div>
-              <p className="text-neutral-200 text-[13px]">
+              <p className="text-neutral-200 text-[13px] md:text-[15px] text-balance">
                 {data?.data.synopsis}
               </p>
             </div>
           </div>
 
           {/* Details */}
-          <div className="flex flex-col text-neutral-200 text-[13px] bg-neutral-950/95 backdrop-blur px-4 py-4">
-            <div className="flex flex-col gap-y-1 border-b border-neutral-800 pb-4">
-              <span>Japanese: {data?.data.title_japanese}</span>
-              <span>Synonim: {data?.data.title_synonyms}</span>
-              <span>Aired: {data?.data.aired.string}</span>
-              <span>Status: {data?.data.status}</span>
-              <span>Rating: {data?.data.rating}</span>
-              <span>MAL Score: {data?.data.score}</span>
+          <div className="flex flex-col text-neutral-200 text-[13px] md:text-[15px] bg-neutral-950/50 p-4 md:px-12 lg:px-20 md:py-8 lg:py-12">
+            <div className="grid grid-cols-[0.9fr_2fr] md:grid-cols-[0.5fr_2fr] lg:grid-cols-[1.4fr_2fr] gap-y-1 md:gap-y-2 lg:gap-y-4 border-b border-neutral-800 pb-4 md:pb-8 lg:pb-12">
+              <span>Japanese</span>
+              <span>{data?.data.title_japanese}</span>
+              <span>Synonym</span>
+              <span>{data?.data.title_synonyms}</span>
+              <span>Aired</span>
+              <span>{data?.data.aired.string}</span>
+              <span>Status</span>
+              <span>{data?.data.status}</span>
+              <span>Rating</span>
+              <span>{data?.data.rating}</span>
+              <span>MAL Score</span>
+              <span>{data?.data.score}</span>
             </div>
-            <div className="py-4 flex items-start gap-x-1">
-              <span>Genres:</span>
-              <div className="flex flex-wrap gap-1">
+            <div className="py-4 md:py-8 lg:py-12 grid grid-cols-[0.9fr_2fr] md:grid-cols-[0.5fr_2fr] lg:grid-cols-[1.4fr_2fr]">
+              <span>Genres</span>
+              <div className="flex flex-wrap gap-1 md:gap-4">
                 {data?.data.genres.map((genre: any, index: number) => (
                   <span
                     key={index}
@@ -112,8 +131,8 @@ export default function DetailAnime({ params }: { params: { id: number } }) {
                 ))}
               </div>
             </div>
-            <div className="pt-4 border-t border-neutral-800 flex items-center gap-x-1">
-              <span>Studios:</span>
+            <div className="pt-4 md:pt-8 lg:pt-12 border-t border-neutral-800 grid grid-cols-[0.9fr_2fr] md:grid-cols-[0.5fr_2fr] lg:grid-cols-[1.4fr_2fr]">
+              <span>Studios</span>
               {data?.data.studios.map((studio: any, index: number) => (
                 <span key={index}>{studio.name}</span>
               ))}
