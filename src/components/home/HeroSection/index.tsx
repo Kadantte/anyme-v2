@@ -8,6 +8,7 @@ import Image from 'next/image';
 import HeroLoading from './HeroLoading';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { FaHeart, FaStar } from 'react-icons/fa6';
 
 export default function HeroSection() {
   const router = useRouter();
@@ -24,7 +25,7 @@ export default function HeroSection() {
       setCurrentHero((prev) =>
         prev === (data.data.length || 1) - 1 ? 0 : prev + 1
       );
-    }, 5000);
+    }, 500000000000);
     return () => clearInterval(interval);
   }, [data]);
 
@@ -53,21 +54,36 @@ export default function HeroSection() {
                 height={5000}
                 className="absolute h-full w-full object-cover z-0"
               />
-              <div className="absolute z-20 h-full w-full text-white flex flex-col justify-center px-4 md:px-12 lg:px-20">
-                <span className="text-[13px] md:text-[17px] font-medium mb-4 md:mb-6 lg:mb-8 bg-violet-600 w-fit p-2 rounded-lg">
-                  #{currentHero + 1} Most Favorite Anime
+              <div className="absolute z-20 h-full w-full flex flex-col justify-center px-4 md:px-12 lg:px-20">
+                <span className="text-[13px] md:text-[17px] text-neutral-200 font-medium mb-4 md:mb-6 lg:mb-8 bg-violet-600 w-fit p-2 rounded-lg">
+                  #{currentHero + 1} Most Favorited Anime
                 </span>
-                <h1 className="text-[25px] md:text-[35px] lg:text-[40px] font-bold text-violet-50 md:max-w-[620px] lg:max-w-[740px] md:mb-2 lg:mb-4">
-                  {hero.title}{' '}
-                  <span className="hidden md:block text-[17px] text-violet-500">
+                <div className="md:max-w-[620px] lg:max-w-[740px] mb-2 md:mb-4 lg:mb-6">
+                  <h1 className="text-[25px] md:text-[35px] lg:text-[40px] font-bold text-neutral-50">
+                    {hero.title}
+                  </h1>
+                  <span className="text-[13px] md:text-[17px] rounded-lg text-neutral-200">
                     ({hero.title_japanese})
                   </span>
-                </h1>
+                </div>
                 <p className="text-[13px] md:text-[17px] text-neutral-200 md:max-w-[650px] lg:max-w-[780px]">
                   {hero.synopsis.length > 200
                     ? hero.synopsis.substring(0, 200) + '...'
                     : hero.synopsis}
                 </p>
+                <div className="flex items-center gap-x-4 md:gap-x-6 lg:gap-x-8 mt-2 md:mt-4 lg:mt-6">
+                  <span className="flex items-center gap-x-2 text-[13px] md:text-[17px] text-neutral-200">
+                    <span className="flex items-center gap-x-1 text-yellow-500">
+                      <FaStar className="size-5 md:size-6" />
+                      {hero.score}
+                    </span>
+                    ({hero.scored_by.toLocaleString('id-ID')} ratings)
+                  </span>
+                  <span className="flex items-center gap-x-1 text-[13px] md:text-[17px] text-neutral-200">
+                    <FaHeart className="size-5 md:size-6 text-rose-500" />
+                    {hero.favorites.toLocaleString('id-ID')}
+                  </span>
+                </div>
                 <div className="flex gap-x-8 items-center mt-6 md:mt-8 lg:mt-10">
                   <Button
                     onClick={() => router.push(`/info/${hero.mal_id}`)}
