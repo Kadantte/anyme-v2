@@ -2,6 +2,7 @@ import { useRouter } from 'next/navigation';
 import { FaHeart, FaStar } from 'react-icons/fa6';
 import { Bookmark, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export const HeroContent = ({
   hero,
@@ -31,7 +32,7 @@ export const HeroContent = ({
 
 const MostFavoritedLabel = ({ currentHero }: any) => {
   return (
-    <span className="text-[13px] md:text-[17px] text-neutral-200 font-medium mb-4 md:mb-6 lg:mb-8 bg-violet-600 w-fit p-2 rounded-lg">
+    <span className="text-[13px] md:text-[17px] text-neutral-200 font-medium mb-4 md:mb-6 lg:mb-8 bg-gradient-to-r from-violet-600 to-fuchsia-600 w-fit p-2 rounded-lg">
       #{currentHero + 1} Most Favorited Anime
     </span>
   );
@@ -54,13 +55,29 @@ const HeroTitle = ({
   );
 };
 
-const HeroSynopsis = ({ hero }: { hero: { synopsis: string } }) => {
+const HeroSynopsis = ({
+  hero,
+}: {
+  hero: { synopsis: string; mal_id: number };
+}) => {
   return (
-    <p className="text-[13px] md:text-[17px] text-neutral-200 md:max-w-[650px] lg:max-w-[780px]">
-      {hero.synopsis.length > 200
-        ? hero.synopsis.substring(0, 200) + '...'
-        : hero.synopsis}
-    </p>
+    <>
+      {hero.synopsis.length > 200 ? (
+        <p className="text-[13px] md:text-[17px] text-neutral-200 md:max-w-[650px] lg:max-w-[780px]">
+          {hero.synopsis.substring(0, 200)}...&nbsp;
+          <Link
+            href={`/info/${hero.mal_id}`}
+            className="text-violet-500 font-bold"
+          >
+            Read More
+          </Link>
+        </p>
+      ) : (
+        <p className="text-[13px] md:text-[17px] text-neutral-200 md:max-w-[650px] lg:max-w-[780px]">
+          {hero.synopsis}
+        </p>
+      )}
+    </>
   );
 };
 

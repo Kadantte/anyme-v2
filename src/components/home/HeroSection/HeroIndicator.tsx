@@ -6,7 +6,7 @@ export const HeroIndicator = ({ data, currentHero, setCurrentHero }: any) => {
       setCurrentHero((prev: number) =>
         prev === (data.data.length || 1) - 1 ? 0 : prev + 1
       );
-    }, 500000000000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [data]);
 
