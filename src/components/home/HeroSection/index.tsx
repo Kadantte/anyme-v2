@@ -21,7 +21,8 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen w-full">
-      <div className="absolute z-10 h-full w-full bg-gradient-to-tr from-neutral-950 from-10% via-neutral-950/70 via-40% to-neutral-950/10 to-90%" />
+      <div className="absolute z-10 h-full w-full bg-gradient-to-t from-neutral-950" />
+      <div className="absolute z-10 h-full w-full bg-gradient-to-r via-transparent from-neutral-950" />
       {data?.data && data.data.length > 0 && (
         <div>
           {data.data.slice(currentIndex, currentIndex + 1).map((hero: any) => (
