@@ -1,12 +1,23 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { getSeasonalAnime } from '@/lib/actions';
+import { useQuery } from '@tanstack/react-query';
 import { ChevronLeft, ChevronRight, ChevronsRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
 
 export default function SeasonalAnimeSection() {
+  const {
+    data: seasonalList,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ['seasonalAnime'],
+    queryFn: () => getSeasonalAnime(),
+  });
+
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
@@ -63,16 +74,16 @@ export default function SeasonalAnimeSection() {
         </div>
         <div
           ref={scrollRef}
-          className="flex overflow-auto no-scrollbar gap-x-2 md:gap-x-3 lg:gap-x-4 snap-x"
+          className="flex overflow-auto no-scrollbar gap-x-2 md:gap-x-3 lg:gap-x-4 snap-x select-none"
         >
-          {Array.from({ length: 10 }).map((_, index) => (
+          {seasonalList?.data.map((seasonal: any) => (
             <Image
-              key={index}
-              src={'/img.jpg'}
-              alt="img"
-              width={500}
-              height={500}
-              className="h-[320px] w-[280px] object-cover snap-end"
+              key={seasonal.mal_id}
+              src={seasonal.images.webp.large_image_url}
+              alt={seasonal.title}
+              width={5000}
+              height={5000}
+              className="w-[280px] h-[320px] object-cover rounded-xl"
             />
           ))}
         </div>

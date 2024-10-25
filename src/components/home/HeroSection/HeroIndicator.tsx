@@ -8,7 +8,7 @@ export const HeroIndicator = ({ data, currentIndex, setCurrentIndex }: any) => {
       );
     }, 10000);
     return () => clearInterval(interval);
-  }, [data]);
+  }, [data, setCurrentIndex]);
 
   const handleIndicatorClick = (index: number) => {
     setCurrentIndex(index);
