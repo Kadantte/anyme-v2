@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export const HeroContent = ({
   hero,
-  currentHero,
+  currentIndex,
 }: {
   hero: {
     mal_id: number;
@@ -17,11 +17,11 @@ export const HeroContent = ({
     scored_by: number;
     favorites: number;
   };
-  currentHero: number;
+  currentIndex: number;
 }) => {
   return (
     <div className="absolute z-20 h-full w-full flex flex-col justify-center px-4 md:px-12 lg:px-20">
-      <MostFavoritedLabel currentHero={currentHero} />
+      <MostFavoritedLabel currentIndex={currentIndex} />
       <HeroTitle hero={hero} />
       <HeroSynopsis hero={hero} />
       <HeroRatings hero={hero} />
@@ -30,10 +30,10 @@ export const HeroContent = ({
   );
 };
 
-const MostFavoritedLabel = ({ currentHero }: any) => {
+const MostFavoritedLabel = ({ currentIndex }: any) => {
   return (
     <span className="text-[13px] md:text-[17px] text-neutral-200 font-medium mb-4 md:mb-6 lg:mb-8 bg-gradient-to-r from-violet-600 to-fuchsia-600 w-fit p-2 rounded-lg">
-      #{currentHero + 1} Most Favorited Anime
+      #{currentIndex + 1} Most Favorited Anime
     </span>
   );
 };

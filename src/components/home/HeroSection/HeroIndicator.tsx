@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
-export const HeroIndicator = ({ data, currentHero, setCurrentHero }: any) => {
+export const HeroIndicator = ({ data, currentIndex, setCurrentIndex }: any) => {
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentHero((prev: number) =>
+      setCurrentIndex((prev: number) =>
         prev === (data.data.length || 1) - 1 ? 0 : prev + 1
       );
     }, 10000);
@@ -11,7 +11,7 @@ export const HeroIndicator = ({ data, currentHero, setCurrentHero }: any) => {
   }, [data]);
 
   const handleIndicatorClick = (index: number) => {
-    setCurrentHero(index);
+    setCurrentIndex(index);
   };
 
   return (
@@ -21,7 +21,7 @@ export const HeroIndicator = ({ data, currentHero, setCurrentHero }: any) => {
           key={index}
           onClick={() => handleIndicatorClick(index)}
           className={`cursor-pointer size-2 rounded-full ${
-            currentHero === index ? 'bg-neutral-50' : 'bg-neutral-400'
+            currentIndex === index ? 'bg-neutral-50' : 'bg-neutral-400'
           }`}
         />
       ))}
