@@ -1,27 +1,41 @@
-import { useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-export const HeroIndicator = ({ data, currentIndex, setCurrentIndex }: any) => {
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev: number) =>
-        prev === (data.data.length || 1) - 1 ? 0 : prev + 1
-      );
-    }, 10000);
-    return () => clearInterval(interval);
-  }, [data, setCurrentIndex]);
-
-  const handleIndicatorClick = (index: number) => {
-    setCurrentIndex(index);
-  };
-
+export const SliderButton = ({
+  prevIndex,
+  nextIndex,
+}: {
+  prevIndex: () => void;
+  nextIndex: () => void;
+}) => {
   return (
-    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-30">
-      {data.data.map((_: any, index: number) => (
-        <span
+    <div className="w-full h-full absolute z-20 hidden lg:flex justify-between items-center">
+      <button onClick={prevIndex}>
+        <ChevronLeft className="size-10 text-neutral-500 hover:text-neutral-200 transition-colors duration-300 ease-in-out ml-0 xl:ml-2 pointer-events-auto" />
+      </button>
+      <button onClick={nextIndex}>
+        <ChevronRight className="size-10 text-neutral-500 hover:text-neutral-200 transition-colors duration-300 ease-in-out mr-0 xl:mr-2" />
+      </button>
+    </div>
+  );
+};
+
+export const IndicatorButton = ({
+  heroList,
+  currentIndex,
+  handleSlide,
+}: {
+  heroList: any;
+  currentIndex: number;
+  handleSlide: (index: number) => void;
+}) => {
+  return (
+    <div className="absolute z-30 bottom-0 left-1/2 -translate-x-1/2 flex gap-x-2 pb-6">
+      {heroList?.data.map((_: any, index: number) => (
+        <button
           key={index}
-          onClick={() => handleIndicatorClick(index)}
-          className={`cursor-pointer size-2 rounded-full ${
-            currentIndex === index ? 'bg-neutral-50' : 'bg-neutral-400'
+          onClick={() => handleSlide(index)}
+          className={`size-[8px] md:size-[10px] rounded-full pointer-events-auto hover:bg-neutral-200 transition-colors duration-300 ease-in-out ${
+            currentIndex === index ? 'bg-neutral-200' : 'bg-neutral-500'
           }`}
         />
       ))}
