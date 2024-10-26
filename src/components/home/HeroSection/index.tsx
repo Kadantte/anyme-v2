@@ -24,7 +24,7 @@ export default function HeroSection() {
       <div className="absolute z-10 h-full w-full bg-gradient-to-t from-neutral-950" />
       <div className="absolute z-10 h-full w-full bg-gradient-to-r via-transparent from-neutral-950" />
       {data?.data && data.data.length > 0 && (
-        <div>
+        <>
           {data.data.slice(currentIndex, currentIndex + 1).map((hero: any) => (
             <div key={hero.mal_id}>
               <Image
@@ -46,7 +46,7 @@ export default function HeroSection() {
             currentIndex={currentIndex}
             setCurrentIndex={setCurrentIndex}
           />
-        </div>
+        </>
       )}
     </section>
   );

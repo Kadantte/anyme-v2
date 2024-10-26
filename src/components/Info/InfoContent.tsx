@@ -11,7 +11,7 @@ export default function InfoContent({ data }: any) {
 
       {/* Content */}
       <div className="flex flex-col lg:flex-row lg:justify-between">
-        <div className="flex flex-col md:flex-row md:px-12 lg:pl-20 md:py-8 lg:py-12 md:gap-x-8 lg:gap-x-12 lg:max-w-[70%]">
+        <div className="flex flex-col md:flex-row md:px-12 lg:pl-20 md:py-8 lg:py-12 md:gap-x-8 lg:gap-x-12 lg:min-w-[70%]">
           <Image
             src={data?.data.images.webp.large_image_url || '/placeholder.png'}
             alt={data?.data.title || 'No title'}
