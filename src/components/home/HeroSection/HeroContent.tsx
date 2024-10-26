@@ -50,7 +50,7 @@ export default function HeroContent({
                 {hero.synopsis.substring(0, 200)}...&nbsp;
                 <Link
                   href={`/info/${hero.mal_id}`}
-                  className="text-violet-500 font-bold"
+                  className="text-violet-500 hover:text-violet-600 transition-colors duration-300 ease-in-out font-bold"
                 >
                   Read More
                 </Link>
