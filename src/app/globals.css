@@ -59,6 +59,12 @@
   }
 }
 
+@layer base {
+  .wrapper {
+    @apply w-[90%] md:w-[720px] lg:w-[960px] xl:w-[1140px] 2xl:w-[1400px] mx-auto flex flex-col justify-center;
+  }
+}
+
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

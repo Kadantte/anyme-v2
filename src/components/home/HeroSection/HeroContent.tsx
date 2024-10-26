@@ -30,7 +30,7 @@ export default function HeroContent({
           }}
         >
           <OverlayHero />
-          <div className="relative z-20 h-full w-[90%] md:w-[720px] lg:w-[960px] xl:w-[1140px] 2xl:w-[1400px] mx-auto flex flex-col justify-center">
+          <div className="relative z-20 h-full wrapper">
             {/* Most Favorited Label */}
             <span className="text-[13px] md:text-[17px] text-neutral-200 font-medium mb-4 md:mb-6 lg:mb-8 bg-gradient-to-r from-violet-600 to-fuchsia-600 w-fit p-2 rounded-lg">
               #{currentIndex + 1} Most Favorited Anime

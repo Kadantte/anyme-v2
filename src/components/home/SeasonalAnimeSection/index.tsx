@@ -22,7 +22,7 @@ export default function SeasonalAnimeSection() {
 
   return (
     <section className="bg-neutral-950 py-8 md:py-12">
-      <div className="w-[90%] md:w-[720px] lg:w-[960px] xl:w-[1140px] 2xl:w-[1400px] mx-auto flex flex-col justify-center">
+      <div className="wrapper">
         <div className="flex justify-between items-end mb-2 md:mb-4 lg:mb-5">
           <div className="flex flex-col gap-y-1 md:gap-y-2 lg:gap-y-3">
             <h1 className="text-neutral-50 text-[1.4rem] md:text-[1.6rem] lg:text-[1.8rem] font-bold border-l-4 border-violet-500 pl-2 md:pl-3 lg:pl-4">
