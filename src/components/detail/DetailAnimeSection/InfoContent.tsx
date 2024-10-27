@@ -1,5 +1,6 @@
 import { Bookmark, CirclePlay } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function InfoContent({ detailAnimeList }: any) {
   return (
@@ -31,10 +32,14 @@ export default function InfoContent({ detailAnimeList }: any) {
           </span>
         </div>
         <div className="flex items-center gap-x-4 text-neutral-100 mt-4 md:mt-5">
-          <button className="flex items-center gap-x-2 text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] border border-neutral-100 px-2 py-1 rounded-lg">
+          <Link
+            href={detailAnimeList?.data.trailer.url}
+            target="_blank"
+            className="flex items-center gap-x-2 text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] border border-neutral-100 px-2 md:px-4 py-1 md:py-2 rounded-lg hover:bg-neutral-100 hover:text-neutral-950 transition-colors duration-300 ease-in-out"
+          >
             <CirclePlay /> Watch Trailer
-          </button>
-          <button className="flex items-center gap-x-2 text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem]">
+          </Link>
+          <button className="flex items-center gap-x-2 text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] px-2 md:px-4 py-1 md:py-2 rounded-lg hover:bg-neutral-100 hover:text-neutral-950 transition-colors duration-300 ease-in-out">
             <Bookmark /> Bookmark
           </button>
         </div>

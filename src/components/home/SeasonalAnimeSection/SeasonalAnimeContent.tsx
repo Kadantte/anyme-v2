@@ -46,7 +46,7 @@ export default function SeasonalAnimeContent({ seasonalList }: any) {
       >
         {seasonalList?.data.map((seasonal: any) => (
           <Link
-            href={`/info/${seasonal.mal_id}`}
+            href={`/detail/${seasonal.mal_id}`}
             key={seasonal.mal_id}
             className="flex-shrink-0 snap-always snap-end relative"
           >
