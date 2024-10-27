@@ -17,35 +17,35 @@ export default function InfoContent({ detailAnimeList }: any) {
           {detailAnimeList?.data.title}
         </h1>
         <div className="flex items-center gap-x-2">
-          <span className="text-[0.9rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] text-neutral-100 bg-gradient-to-r from-violet-500 to-fuchsia-500 py-1 px-2 rounded-lg">
+          <span className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-100 bg-gradient-to-r from-violet-500 to-fuchsia-500 py-1 px-2 rounded-lg">
             {detailAnimeList?.data.type}
           </span>
-          <span className="text-[0.9rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] text-neutral-100 bg-gradient-to-r from-violet-500 to-fuchsia-500 py-1 px-2 rounded-lg">
+          <span className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-100 bg-gradient-to-r from-violet-500 to-fuchsia-500 py-1 px-2 rounded-lg">
             Eps{' '}
             {detailAnimeList?.data.episodes === null
               ? '??'
               : detailAnimeList?.data.episodes}
           </span>
-          <span className="text-[0.9rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] text-neutral-100 bg-gradient-to-r from-violet-500 to-fuchsia-500 py-1 px-2 rounded-lg">
+          <span className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-100 bg-gradient-to-r from-violet-500 to-fuchsia-500 py-1 px-2 rounded-lg">
             {detailAnimeList?.data.duration}
           </span>
         </div>
         <div className="flex items-center gap-x-4 text-neutral-100 mt-4 md:mt-5">
-          <button className="flex items-center gap-x-2 text-[0.9rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] border border-neutral-100 px-2 py-1 rounded-lg">
+          <button className="flex items-center gap-x-2 text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] border border-neutral-100 px-2 py-1 rounded-lg">
             <CirclePlay /> Watch Trailer
           </button>
-          <button className="flex items-center gap-x-2 text-[0.9rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem]">
+          <button className="flex items-center gap-x-2 text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem]">
             <Bookmark /> Bookmark
           </button>
         </div>
-        <p className="text-[0.9rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] text-neutral-200 mt-4 md:mt-6 text-balance">
+        <p className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-200 mt-4 md:mt-6 text-balance">
           {detailAnimeList?.data.synopsis}
         </p>
         <div className="flex flex-wrap gap-x-2 mt-4">
           {detailAnimeList?.data.genres.map((genre: any) => (
             <span
               key={genre.mal_id}
-              className="text-[0.9rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] text-neutral-200 bg-violet-950/50 border border-violet-900 bg-clip-padding backdrop-filter  backdrop-blur  backdrop-saturate-100 backdrop-contrast-100 px-2 py-1 rounded-lg"
+              className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-200 bg-violet-950/50 border border-violet-900 bg-clip-padding backdrop-filter  backdrop-blur  backdrop-saturate-100 backdrop-contrast-100 px-2 py-1 rounded-lg"
             >
               {genre.name}
             </span>
