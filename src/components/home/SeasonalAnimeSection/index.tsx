@@ -18,7 +18,7 @@ export default function SeasonalAnimeSection() {
   });
 
   if (isLoading) return <SeasonalLoading />;
-  if (error) return <div>Error</div>;
+  if (error) return <p>{error.message}</p>;
 
   return (
     <section className="bg-neutral-950 py-8 md:py-12">

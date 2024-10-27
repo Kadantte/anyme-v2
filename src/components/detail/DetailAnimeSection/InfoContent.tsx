@@ -5,11 +5,8 @@ export default function InfoContent({ detailAnimeList }: any) {
   return (
     <div className="flex flex-col md:flex-row md:gap-x-4 lg:gap-x-6 xl:gap-x-8 py-4 md:py-8 lg:py-10 xl:py-12">
       <Image
-        src={
-          detailAnimeList?.data.images.webp.large_image_url ||
-          '/placeholder.jpg'
-        }
-        alt={detailAnimeList?.data.title || 'Placeholder Image'}
+        src={detailAnimeList?.data.images.webp.large_image_url}
+        alt={detailAnimeList?.data.title}
         width={5000}
         height={5000}
         priority

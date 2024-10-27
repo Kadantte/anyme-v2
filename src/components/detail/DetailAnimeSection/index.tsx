@@ -3,6 +3,7 @@
 import InfoContent from '@/components/detail/DetailAnimeSection/InfoContent';
 import { getDetailAnime } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
+import InfoLoading from './InfoLoading';
 
 export default function DetailAnimeSection({
   params,
@@ -17,6 +18,9 @@ export default function DetailAnimeSection({
     queryKey: ['detailAnime', params.id],
     queryFn: () => getDetailAnime(params.id),
   });
+
+  if (isLoading) return <InfoLoading />;
+  if (error) return <p>{error.message}</p>;
 
   return (
     <section
