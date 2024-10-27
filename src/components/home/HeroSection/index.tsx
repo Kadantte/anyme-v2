@@ -2,7 +2,7 @@
 
 import { getHeroes } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import HeroContent from './HeroContent';
 import { IndicatorButton, SliderButton } from './HeroIndicator';
 import HeroLoading from './HeroLoading';
@@ -27,11 +27,11 @@ export default function HeroSection() {
     setCurrentIndex(newIndex);
   };
 
-  const nextIndex = () => {
+  const nextIndex = useCallback(() => {
     const isLastIndex = currentIndex === heroList?.data.length - 1;
     const newIndex = isLastIndex ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
-  };
+  }, [currentIndex, heroList?.data.length]);
 
   const handleSlide = (index: number) => {
     setCurrentIndex(index);
@@ -42,7 +42,7 @@ export default function HeroSection() {
       nextIndex();
     }, 5000);
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [currentIndex, nextIndex]);
 
   if (isLoading) return <HeroLoading />;
   if (error) return <p>{error.message}</p>;
