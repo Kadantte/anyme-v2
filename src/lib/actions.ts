@@ -33,3 +33,13 @@ export const getSeasonalAnime = async () => {
     throw error;
   }
 };
+
+export const getAnimeReviews = async (id: number) => {
+  try {
+    const res = await axiosInstance.get(`/anime/${id}/reviews`);
+    return res.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};

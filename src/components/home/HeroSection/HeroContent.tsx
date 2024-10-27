@@ -49,7 +49,7 @@ export default function HeroContent({
               <p className="text-[13px] md:text-[17px] text-neutral-200 md:max-w-[650px] lg:max-w-[780px]">
                 {hero.synopsis.substring(0, 200)}...&nbsp;
                 <Link
-                  href={`/info/${hero.mal_id}`}
+                  href={`/detail/${hero.mal_id}`}
                   className="text-violet-500 hover:text-violet-600 transition-colors duration-300 ease-in-out font-bold"
                 >
                   Read More
@@ -77,7 +77,7 @@ export default function HeroContent({
             {/* Hero Button */}
             <div className="flex gap-x-8 items-center mt-6 md:mt-8 lg:mt-10">
               <Button
-                onClick={() => router.push(`/info/${hero.mal_id}`)}
+                onClick={() => router.push(`/detail/${hero.mal_id}`)}
                 className="flex items-center justify-center gap-x-2 rounded-lg text-neutral-50 text-[13px] md:text-[17px] font-medium"
               >
                 <span>Show Detail</span> <ChevronRight size={20} />

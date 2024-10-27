@@ -1,4 +1,5 @@
 import DetailAnimeSection from '@/components/detail/DetailAnimeSection';
+import ReviewsSection from '@/components/detail/ReviewsSection';
 
 export default function DetailAnimePage({
   params,
@@ -8,6 +9,7 @@ export default function DetailAnimePage({
   return (
     <div className="relative">
       <DetailAnimeSection params={params} />
+      <ReviewsSection params={params} />
     </div>
   );
 }
