@@ -19,7 +19,7 @@ export default function ReviewsSection({ params }: { params: { id: number } }) {
   return (
     <section className="my-20">
       <span>Reviews</span>
-      {reviewsList?.data.map((review) => (
+      {reviewsList?.data.map((review: any) => (
         <div key={review.mal_id}>
           <p>{review.review}</p>
         </div>
