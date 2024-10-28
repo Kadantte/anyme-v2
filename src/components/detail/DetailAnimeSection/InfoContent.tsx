@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function InfoContent({ detailAnimeList }: any) {
   return (
-    <div className="flex flex-col md:flex-row md:gap-x-4 lg:gap-x-6 xl:gap-x-8 py-4 md:py-8 lg:py-10 xl:py-12">
+    <div className="flex flex-col md:flex-row md:gap-x-4 lg:gap-x-6 xl:gap-x-8 pb-4 md:pb-8 lg:pb-10 xl:pb-12">
       <Image
         src={detailAnimeList?.data.images.webp.large_image_url}
         alt={detailAnimeList?.data.title}
