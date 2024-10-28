@@ -1,3 +1,4 @@
+import HoverCardEffect from '@/components/HoverCard';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -48,14 +49,16 @@ export default function SeasonalAnimeContent({ seasonalList }: any) {
           <Link
             href={`/detail/${seasonal.mal_id}`}
             key={seasonal.mal_id}
-            className="flex-shrink-0 snap-always snap-end relative"
+            className="flex-shrink-0 snap-always snap-end relative rounded-xl overflow-hidden group"
           >
+            <HoverCardEffect data={seasonal} />
             <Image
               src={seasonal.images.webp.large_image_url}
               alt={seasonal.title}
               width={5000}
               height={5000}
-              className="w-[220px] h-[320px] object-cover rounded-xl"
+              className="w-[220px] h-[320px] object-cover"
+              priority
             />
             <div className="absolute h-full w-full bg-gradient-to-t from-neutral-900 rounded-xl top-0" />
             <div className="absolute bottom-0 top-0 h-full w-full p-2 flex flex-col justify-between">
