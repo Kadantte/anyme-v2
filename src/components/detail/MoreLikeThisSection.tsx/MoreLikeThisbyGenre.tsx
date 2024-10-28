@@ -3,6 +3,7 @@
 import { getMoreLikeThisbyGenre } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
+import MoreLikeLoading from './MoreLikeLoading';
 
 export default function MoreLikeThisbyGenre({
   params,
@@ -17,6 +18,9 @@ export default function MoreLikeThisbyGenre({
     queryKey: ['moreLikeThisbyGenre', params.id],
     queryFn: () => getMoreLikeThisbyGenre(params.id),
   });
+
+  if (isLoading) return <MoreLikeLoading />;
+  if (error) return <p>{error.message}</p>;
   return (
     <>
       {moreByGenre?.data.map((moreLikeGenre: any) => (
@@ -28,7 +32,11 @@ export default function MoreLikeThisbyGenre({
             width={5000}
             className="h-[320px] w-full rounded-lg object-cover"
           />
-          <h2>{moreLikeGenre.title.substring(0, 20)}</h2>
+          <h2>
+            {moreLikeGenre.title.length > 20
+              ? `${moreLikeGenre.title.substring(0, 20)}...`
+              : moreLikeGenre.title}
+          </h2>
         </div>
       ))}
     </>

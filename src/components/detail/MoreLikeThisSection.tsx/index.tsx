@@ -2,8 +2,9 @@
 
 import { getMoreLikeThis } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
-import Image from 'next/image';
+import MoreLikeThisContent from './MoreLikeThisContent';
 import MoreLikeThisbyGenre from './MoreLikeThisbyGenre';
+import MoreLikeLoading from './MoreLikeLoading';
 
 export default function MoreLikeThisSection({
   params,
@@ -18,6 +19,10 @@ export default function MoreLikeThisSection({
     queryKey: ['moreLikeThis', params.id],
     queryFn: () => getMoreLikeThis(params.id),
   });
+
+  if (isLoading) return <MoreLikeLoading />;
+  if (error) return <p>{error.message}</p>;
+
   return (
     <section className="bg-neutral-950 pb-8 md:pb-12">
       <div className="wrapper">
@@ -28,21 +33,7 @@ export default function MoreLikeThisSection({
           {moreLikeThisList?.data.length === 0 ? (
             <MoreLikeThisbyGenre params={params} />
           ) : (
-            moreLikeThisList?.data.map((moreLike: any) => (
-              <div
-                key={moreLike.entry.mal_id}
-                className="flex flex-col gap-y-2"
-              >
-                <Image
-                  src={moreLike.entry.images.webp.large_image_url}
-                  alt={moreLike.title}
-                  height={5000}
-                  width={5000}
-                  className="h-[210px] md:h-[230px] lg:h-[260px] xl:h-[320px] w-full rounded-lg object-cover"
-                />
-                <h2>{moreLike.entry.title.substring(0, 20)}</h2>
-              </div>
-            ))
+            <MoreLikeThisContent moreLikeThisList={moreLikeThisList} />
           )}
         </div>
       </div>

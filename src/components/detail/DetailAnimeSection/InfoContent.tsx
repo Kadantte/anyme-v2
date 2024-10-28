@@ -11,7 +11,7 @@ export default function InfoContent({ detailAnimeList }: any) {
         width={5000}
         height={5000}
         priority
-        className="w-[220px] h-[320px] mx-auto object-cover rounded-xl mb-2 md:mb-0"
+        className="w-[220px] h-[320px] mx-auto md:m-0 object-cover rounded-xl mb-2 md:mb-0"
       />
       <div>
         <h1 className="text-[1.8rem] md:text-[2rem] lg:text-[2.2rem] xl:text-[2.4rem] font-bold text-neutral-50 mb-1 md:mb-2">

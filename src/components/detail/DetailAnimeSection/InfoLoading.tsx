@@ -3,7 +3,7 @@ import { Skeleton } from '../../ui/skeleton';
 export default function InfoLoading() {
   return (
     <section className="bg-neutral-400 animate-pulse">
-      <div className="wrapper py-4">
+      <div className="wrapper py-4 md:py-8">
         <div className="flex flex-col md:flex-row md:gap-x-8">
           <Skeleton className="w-[220px] h-[320px] mx-auto md:mx-0 bg-neutral-800" />
           <div className="md:w-[80%]">
