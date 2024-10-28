@@ -43,3 +43,32 @@ export const getAnimeReviews = async (id: number) => {
     throw error;
   }
 };
+
+export const getMoreLikeThis = async (id: number) => {
+  try {
+    const res = await axiosInstance.get(`/anime/${id}/recommendations`);
+    return res.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
+export const getMoreLikeThisbyGenre = async (id: number) => {
+  try {
+    const animeDetail = await getDetailAnime(id);
+
+    const genreIds = animeDetail.data.genres
+      .map((genre: any) => genre.mal_id)
+      .join(',');
+
+    const res = await axiosInstance.get(
+      `/anime?genres=${genreIds}&order_by=favorites&sort=desc`
+    );
+
+    return res.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
