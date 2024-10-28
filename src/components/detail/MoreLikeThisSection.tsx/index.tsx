@@ -24,7 +24,7 @@ export default function MoreLikeThisSection({
         <h1 className="text-neutral-50 text-[1.4rem] md:text-[1.6rem] lg:text-[1.8rem] font-bold border-l-4 border-violet-500 pl-2 md:pl-3 lg:pl-4">
           More Like This
         </h1>
-        <div className="grid grid-cols-5 gap-4 mt-4 md:mt-5 lg:mt-6 text-white">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4 md:mt-5 lg:mt-6 text-white">
           {moreLikeThisList?.data.length === 0 ? (
             <MoreLikeThisbyGenre params={params} />
           ) : (
@@ -38,7 +38,7 @@ export default function MoreLikeThisSection({
                   alt={moreLike.title}
                   height={5000}
                   width={5000}
-                  className="h-[320px] w-full rounded-lg object-cover"
+                  className="h-[210px] md:h-[230px] lg:h-[260px] xl:h-[320px] w-full rounded-lg object-cover"
                 />
                 <h2>{moreLike.entry.title.substring(0, 20)}</h2>
               </div>
