@@ -26,6 +26,12 @@ export default function HoverCardEffect({ data }: any) {
             <span className="bg-gradient-to-r from-emerald-600 to-emerald-500 p-1 rounded-lg text-[0.9rem] text-neutral-200">
               {data.type}
             </span>
+            <span className="bg-gradient-to-r from-blue-600 to-blue-500 p-1 rounded-lg text-[0.9rem] text-neutral-200">
+              {data.episodes} Eps
+            </span>
+            <span className="bg-gradient-to-r from-yellow-600 to-yellow-500 p-1 rounded-lg text-[0.9rem] text-neutral-200">
+              &#9733; {data.score}
+            </span>
             <span className="bg-gradient-to-r from-pink-600 to-pink-500 p-1 rounded-lg text-[0.9rem] text-neutral-200">
               ❤ {data.favorites}
             </span>

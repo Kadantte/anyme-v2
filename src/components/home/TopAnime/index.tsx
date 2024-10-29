@@ -1,85 +1,16 @@
 'use client';
 
-import AnimeGrid from '@/components/AnimeGrid';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { getTopAnime } from '@/lib/actions';
-import { useQueries } from '@tanstack/react-query';
+import {
+  AllAnime,
+  FavoriteAnimes,
+  PopularAnimes,
+  TopAiring,
+  TopMovies,
+  TopUpcoming,
+} from './TopAnime';
 
 export default function TopAnimeSection() {
-  const topAnimeList = [
-    { data: 'allAnimeList', keyword: 'allAnime', type: '', filter: '' },
-    { data: 'topAiringList', keyword: 'topAiring', type: '', filter: 'airing' },
-    {
-      data: 'topUpcomingList',
-      keyword: 'topUpcoming',
-      type: '',
-      filter: 'upcoming',
-    },
-    { data: 'topMovieList', keyword: 'topMovie', type: 'movie', filter: '' },
-    {
-      data: 'topPopularList',
-      keyword: 'topPopular',
-      type: '',
-      filter: 'bypopularity',
-    },
-    {
-      data: 'topFavoriteList',
-      keyword: 'topFavorite',
-      type: '',
-      filter: 'favorite',
-    },
-  ];
-
-  const results = useQueries({
-    queries: topAnimeList.map((item) => ({
-      queryKey: [item.keyword],
-      queryFn: () => getTopAnime({ type: item.type, filter: item.filter }),
-    })),
-  });
-
-  // Mapping hasil queries sesuai dengan data yang dibutuhkan
-  const [
-    allAnimeResult,
-    topAiringResult,
-    topUpcomingResult,
-    topMovieResult,
-    topPopularResult,
-    topFavoriteResult,
-  ] = results;
-
-  const tabContents = [
-    { value: 'animes', data: allAnimeResult.data },
-    { value: 'airing', data: topAiringResult.data },
-    { value: 'upcoming', data: topUpcomingResult.data },
-    { value: 'movies', data: topMovieResult.data },
-    { value: 'popular', data: topPopularResult.data },
-    { value: 'favorited', data: topFavoriteResult.data },
-  ];
-
-  const tabs = [
-    { value: 'animes', label: 'All Anime' },
-    { value: 'airing', label: 'Top Airing' },
-    { value: 'upcoming', label: 'Top Upcoming' },
-    { value: 'movies', label: 'Top Movies' },
-    { value: 'popular', label: 'Most Popular' },
-    { value: 'favorited', label: 'Most Favorited' },
-  ];
-
-  // Cek loading state
-  const isLoading = results.some((result) => result.isLoading);
-
-  // Cek error state
-  const isError = results.some((result) => result.isError);
-  const errors = results.map((result) => result.error).filter(Boolean);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error: {errors.join(', ')}</div>;
-  }
-
   return (
     <section className="bg-neutral-950 pb-8 md:pb-12 text-white">
       <div className="wrapper">
@@ -87,18 +18,32 @@ export default function TopAnimeSection() {
           Top Anime
         </h1>
         <Tabs defaultValue="animes" className="mt-2 md:mt-4 lg:mt-5">
-          <TabsList className="mb-2">
-            {tabs.map((tab) => (
-              <TabsTrigger key={tab.value} value={tab.value}>
-                {tab.label}
-              </TabsTrigger>
-            ))}
+          <TabsList className="mb-2 md:mb-4 lg:mb-5">
+            <TabsTrigger value="animes">All Anime</TabsTrigger>
+            <TabsTrigger value="airing">Top Airing</TabsTrigger>
+            <TabsTrigger value="upcoming">Top Upcoming</TabsTrigger>
+            <TabsTrigger value="movies">Top Movies</TabsTrigger>
+            <TabsTrigger value="popular">Most Popular</TabsTrigger>
+            <TabsTrigger value="favorite">Most Favorited</TabsTrigger>
           </TabsList>
-          {tabContents.map((tab) => (
-            <TabsContent key={tab.value} value={tab.value}>
-              <AnimeGrid data={tab.data} />
-            </TabsContent>
-          ))}
+          <TabsContent value="animes">
+            <AllAnime />
+          </TabsContent>
+          <TabsContent value="airing">
+            <TopAiring />
+          </TabsContent>
+          <TabsContent value="upcoming">
+            <TopUpcoming />
+          </TabsContent>
+          <TabsContent value="movies">
+            <TopMovies />
+          </TabsContent>
+          <TabsContent value="popular">
+            <PopularAnimes />
+          </TabsContent>
+          <TabsContent value="favorite">
+            <FavoriteAnimes />
+          </TabsContent>
         </Tabs>
       </div>
     </section>
