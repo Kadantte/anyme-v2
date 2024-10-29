@@ -1,6 +1,7 @@
 'use client';
 
 import AnimeGrid from '@/components/AnimeGrid';
+import AnimeGridLoading from '@/components/AnimeGridLoading';
 import { getTopAnime } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
 
@@ -15,7 +16,7 @@ export function AllAnime() {
     gcTime: 1000,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
   return <AnimeGrid data={allAnimeList} />;
@@ -32,7 +33,7 @@ export function TopAiring() {
     gcTime: 1000,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
   return <AnimeGrid data={topAiringList} />;
@@ -49,7 +50,7 @@ export function TopUpcoming() {
     gcTime: 1000,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
   return <AnimeGrid data={topUpcomingList} />;
@@ -66,7 +67,7 @@ export function TopMovies() {
     gcTime: 1000,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
   return <AnimeGrid data={topMoviesList} />;
@@ -83,7 +84,7 @@ export function PopularAnimes() {
     gcTime: 1000,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
   return <AnimeGrid data={popularList} />;
@@ -100,7 +101,7 @@ export function FavoriteAnimes() {
     gcTime: 1000,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
   return <AnimeGrid data={topFavoriteList} />;

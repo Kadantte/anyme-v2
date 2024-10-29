@@ -21,30 +21,34 @@ export default function HoverCardEffect({ data }: any) {
           </h2>
           <div className="flex gap-x-2 items-center mt-1">
             <span className="bg-gradient-to-r from-red-600 to-red-500 p-1 rounded-lg text-[0.9rem] text-neutral-200">
-              {data.rating.substring(0, 6)}
+              {data.rating ? data.rating.substring(0, 6) : '??'}
             </span>
             <span className="bg-gradient-to-r from-emerald-600 to-emerald-500 p-1 rounded-lg text-[0.9rem] text-neutral-200">
-              {data.type}
+              {data.type ? data.type : '??'}
             </span>
             <span className="bg-gradient-to-r from-blue-600 to-blue-500 p-1 rounded-lg text-[0.9rem] text-neutral-200">
-              {data.episodes} Eps
+              {data.episodes ? data.episodes : '??'} Eps
             </span>
             <span className="bg-gradient-to-r from-yellow-600 to-yellow-500 p-1 rounded-lg text-[0.9rem] text-neutral-200">
-              &#9733; {data.score}
+              &#9733; {data.score ? data.score : '??'}
             </span>
             <span className="bg-gradient-to-r from-pink-600 to-pink-500 p-1 rounded-lg text-[0.9rem] text-neutral-200">
-              ❤ {data.favorites}
+              ❤ {data.favorites ? data.favorites : '??'}
             </span>
           </div>
           <p className="text-[0.9rem] text-neutral-200 pb-2 pt-2 text-pretty">
-            {data.synopsis.length > 120
+            {data.synopsis === null
+              ? 'No synopsis available.'
+              : data.synopsis.length > 120
               ? data.synopsis.substring(0, 120) + '...'
               : data.synopsis}
           </p>
           <div className="text-[0.9rem] text-neutral-200 flex flex-col pb-2 pt-2 border-t border-neutral-500">
-            <span>Japanese: {data.title_japanese}</span>
-            <span>Aired: {data.aired.string}</span>
-            <span>Status: {data.status}</span>
+            <span>
+              Japanese: {data.title_japanese ? data.title_japanese : '??'}
+            </span>
+            <span>Aired: {data.aired.string ? data.aired.string : '??'}</span>
+            <span>Status: {data.status ? data.status : '??'}</span>
           </div>
           <div className="text-[0.9rem] text-neutral-200 flex gap-x-2 pt-2 border-t border-neutral-500">
             <span>Genres:</span>

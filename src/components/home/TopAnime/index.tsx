@@ -17,7 +17,7 @@ export default function TopAnimeSection() {
         <h1 className="text-neutral-50 text-[1.4rem] md:text-[1.6rem] lg:text-[1.8rem] font-bold border-l-4 border-violet-500 pl-2 md:pl-3 lg:pl-4">
           Top Anime
         </h1>
-        <Tabs defaultValue="animes" className="mt-2 md:mt-4 lg:mt-5">
+        <Tabs defaultValue="animes" className="hidden md:block md:mt-4 lg:mt-5">
           <TabsList className="mb-2 md:mb-4 lg:mb-5">
             <TabsTrigger value="animes">All Anime</TabsTrigger>
             <TabsTrigger value="airing">Top Airing</TabsTrigger>
