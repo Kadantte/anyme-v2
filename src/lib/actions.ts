@@ -74,8 +74,8 @@ export const getMoreLikeThisbyGenre = async (id: number) => {
 };
 
 export const getTopAnime = async ({
-  type,
-  filter,
+  type = '',
+  filter = '',
 }: {
   type?: string;
   filter?: string;
