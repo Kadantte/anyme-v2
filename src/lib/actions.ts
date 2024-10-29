@@ -72,3 +72,21 @@ export const getMoreLikeThisbyGenre = async (id: number) => {
     throw error;
   }
 };
+
+export const getTopAnime = async ({
+  type,
+  filter,
+}: {
+  type?: string;
+  filter?: string;
+}) => {
+  try {
+    const res = await axiosInstance.get(
+      `/top/anime?type=${type}&filter=${filter}`
+    );
+    return res.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};

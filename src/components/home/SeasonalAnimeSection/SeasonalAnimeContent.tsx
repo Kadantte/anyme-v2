@@ -2,10 +2,12 @@ import HoverCardEffect from '@/components/HoverCard';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useRef } from 'react';
 
 export default function SeasonalAnimeContent({ seasonalList }: any) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -46,8 +48,8 @@ export default function SeasonalAnimeContent({ seasonalList }: any) {
         className="flex overflow-auto no-scrollbar gap-x-2 md:gap-x-3 lg:gap-x-4 snap-x snap-mandatory select-none"
       >
         {seasonalList?.data.map((seasonal: any) => (
-          <Link
-            href={`/detail/${seasonal.mal_id}`}
+          <div
+            onClick={() => router.push(`/detail/${seasonal.mal_id}`)}
             key={seasonal.mal_id}
             className="flex-shrink-0 snap-always snap-end relative rounded-xl overflow-hidden group"
           >
@@ -74,7 +76,7 @@ export default function SeasonalAnimeContent({ seasonalList }: any) {
                 {seasonal.title}
               </span>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>
