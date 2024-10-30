@@ -3,12 +3,12 @@ import HoverCardEffect from './HoverCard';
 
 export default function AnimeGrid({ data }: any) {
   return (
-    <>
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 md:gap-4">
       {data?.data.map((anime: any, index: number) => (
         <Link
           href={`/detail/${anime.mal_id}`}
           key={`${anime.mal_id}-${index}`}
-          className="relative md:h-[320px] w-full rounded-xl bg-cover overflow-hidden group cursor-pointer"
+          className="relative h-[250px] md:h-[320px] w-full rounded-xl bg-cover overflow-hidden group cursor-pointer"
           style={{ backgroundImage: `url(${anime.images.jpg.image_url})` }}
         >
           <HoverCardEffect data={anime} />
@@ -26,6 +26,6 @@ export default function AnimeGrid({ data }: any) {
           </div>
         </Link>
       ))}
-    </>
+    </div>
   );
 }
