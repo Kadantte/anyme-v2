@@ -30,7 +30,7 @@ export default function MoreLikeThisbyGenre({
             alt={moreLikeGenre.title}
             height={5000}
             width={5000}
-            className="h-[320px] w-full rounded-lg object-cover"
+            className="h-[320px] w-full rounded-xl object-cover"
           />
           <h2>
             {moreLikeGenre.title.length > 20

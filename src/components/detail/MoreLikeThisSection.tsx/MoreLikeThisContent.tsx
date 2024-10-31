@@ -8,7 +8,7 @@ export default function MoreLikeThisContent({
 }) {
   return (
     <>
-      {moreLikeThisList?.data.map((moreLike: any) => (
+      {moreLikeThisList?.data.slice(0, 25).map((moreLike: any) => (
         <Link
           href={`/detail/${moreLike.entry.mal_id}`}
           key={moreLike.entry.mal_id}
@@ -21,7 +21,7 @@ export default function MoreLikeThisContent({
             height={5000}
             width={5000}
             priority
-            className="h-[210px] md:h-[230px] lg:h-[260px] xl:h-[320px] w-full rounded-lg object-cover"
+            className="h-[210px] md:h-[230px] lg:h-[260px] xl:h-[320px] w-full rounded-xl object-cover"
           />
           <h2>
             {moreLike.entry.title.length > 20

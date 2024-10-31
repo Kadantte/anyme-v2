@@ -63,7 +63,7 @@ export const getMoreLikeThisbyGenre = async (id: number) => {
       .join(',');
 
     const res = await axiosInstance.get(
-      `/anime?genres=${genreIds}&order_by=favorites&sort=desc`
+      `/anime?genres=${genreIds}&order_by=favorites&sort=desc&limit=25`
     );
 
     return res.data;
@@ -104,6 +104,16 @@ export const getTopCharacter = async () => {
 export const getGenres = async () => {
   try {
     const res = await axiosInstance.get(`/genres/anime`);
+    return res.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
+export const getDetailAnimeCharacters = async (id: number) => {
+  try {
+    const res = await axiosInstance.get(`/anime/${id}/characters`);
     return res.data;
   } catch (error) {
     console.error('Error fetching data:', error);

@@ -24,7 +24,7 @@ export default function MoreLikeThisSection({
   if (error) return <p>{error.message}</p>;
 
   return (
-    <section className="bg-neutral-950 pb-8 md:pb-12">
+    <section className="bg-neutral-950 py-8 md:py-12">
       <div className="wrapper">
         <h1 className="text-neutral-50 text-[1.4rem] md:text-[1.6rem] lg:text-[1.8rem] font-bold border-l-4 border-violet-500 pl-2 md:pl-3 lg:pl-4">
           More Like This
