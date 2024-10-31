@@ -90,3 +90,13 @@ export const getTopAnime = async ({
     throw error;
   }
 };
+
+export const getTopCharacter = async () => {
+  try {
+    const res = await axiosInstance.get(`/top/characters`);
+    return res.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
