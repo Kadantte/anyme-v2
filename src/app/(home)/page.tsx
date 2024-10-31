@@ -1,4 +1,5 @@
 import AnyMeSection from '@/components/AnyMeSection';
+import DiscoverGenreSection from '@/components/home/DiscoverGenreSection';
 import HeroSection from '@/components/home/HeroSection';
 import SeasonalAnimeSection from '@/components/home/SeasonalAnimeSection';
 import TopAnimeSection from '@/components/home/TopAnime';
@@ -12,6 +13,7 @@ export default function Home() {
       <TopAnimeSection />
       <AnyMeSection />
       <TopCharacterSection />
+      <DiscoverGenreSection />
     </main>
   );
 }

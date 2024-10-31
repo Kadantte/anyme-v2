@@ -100,3 +100,13 @@ export const getTopCharacter = async () => {
     throw error;
   }
 };
+
+export const getGenres = async () => {
+  try {
+    const res = await axiosInstance.get(`/genres/anime`);
+    return res.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};

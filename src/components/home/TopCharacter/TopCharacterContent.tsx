@@ -46,7 +46,7 @@ export default function TopCharacterContent({ topCharacterList }: any) {
                 #{index + 1}
               </span>
               <span className="w-fit bg-rose-500/75 px-2 py-1 rounded-lg text-neutral-200 text-[1rem]">
-                ❤ {formattedNumber(chara.favorites)}
+                &#x2764; {formattedNumber(chara.favorites)}
               </span>
             </div>
             <h2 className="text-neutral-200 text-[1rem]">{chara.name}</h2>

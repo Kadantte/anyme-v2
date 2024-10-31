@@ -33,7 +33,7 @@ export default function HoverCardEffect({ data }: any) {
               &#9733; {data.score ? data.score : '??'}
             </span>
             <span className="bg-gradient-to-r from-pink-600 to-pink-500 p-1 rounded-lg text-[0.9rem] text-neutral-200">
-              ❤ {data.favorites ? data.favorites : '??'}
+              &#x2764; {data.favorites ? data.favorites : '??'}
             </span>
           </div>
           <p className="text-[0.9rem] text-neutral-200 pb-2 pt-2 text-pretty">
