@@ -3,6 +3,7 @@
 import { getTopCharacter } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
 import TopCharacterContent from './TopCharacterContent';
+import TopCharacterLoading from './TopCharacterLoading';
 
 export default function TopCharacterSection() {
   const {
@@ -14,6 +15,7 @@ export default function TopCharacterSection() {
     queryFn: getTopCharacter,
   });
 
+  if (isLoading) return <TopCharacterLoading />;
   if (error) return <p>{error.message}</p>;
 
   return (

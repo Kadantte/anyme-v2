@@ -9,7 +9,7 @@ export default function DetailAnimePage({
   params: { id: number };
 }) {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <DetailAnimeSection params={params} />
       <ReviewsSection params={params} />
       <MoreLikeThisSection params={params} />

@@ -2,7 +2,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 export default function MoreLikeLoading() {
   return (
-    <section className="bg-neutral-400 animate-pulse">
+    <section className="bg-neutral-950">
       <div className="wrapper py-4 md:py-8">
         <div className="flex flex-col">
           <Skeleton className="w-[70%] md:w-[40%] h-10 bg-neutral-800" />
