@@ -1,5 +1,6 @@
 'use client';
 
+import { Skeleton } from '@/components/ui/skeleton';
 import { getGenres } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
@@ -13,6 +14,22 @@ export default function DiscoverGenreSection() {
     queryKey: ['genre'],
     queryFn: getGenres,
   });
+
+  if (isLoading)
+    return (
+      <section className="bg-neutral-950 pb-8 md:pb-12">
+        <div className="wrapper">
+          <Skeleton className="h-10 w-[70%] md:w-[40%] lg:w-[25%] bg-neutral-800 mb-4 self-center" />
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 mt-3 md:mt-4 lg:mt-5">
+            {Array.from({ length: 36 }).map((_, index) => (
+              <Skeleton key={index} className="w-full h-10 bg-neutral-800" />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+
+  if (error) return <p>{error.message}</p>;
 
   return (
     <section className="bg-neutral-950 pb-8 md:pb-12">

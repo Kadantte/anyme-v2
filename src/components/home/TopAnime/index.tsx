@@ -43,7 +43,7 @@ export default function TopAnimeSection() {
           <TabsContent value="airing">
             <TopAiring />
             <Link
-              href="/top/airing"
+              href="/top/filter/airing"
               className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
             >
               <span>View More</span>
@@ -53,7 +53,7 @@ export default function TopAnimeSection() {
           <TabsContent value="upcoming">
             <TopUpcoming />
             <Link
-              href="/top/upcoming"
+              href="/top/filter/upcoming"
               className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
             >
               <span>View More</span>
@@ -63,7 +63,7 @@ export default function TopAnimeSection() {
           <TabsContent value="movies">
             <TopMovies />
             <Link
-              href="/top/movies"
+              href="/top/type/movies"
               className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
             >
               <span>View More</span>
@@ -73,7 +73,7 @@ export default function TopAnimeSection() {
           <TabsContent value="popular">
             <PopularAnimes />
             <Link
-              href="/top/popular"
+              href="/top/filter/popular"
               className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
             >
               <span>View More</span>
@@ -83,7 +83,7 @@ export default function TopAnimeSection() {
           <TabsContent value="favorite">
             <FavoriteAnimes />
             <Link
-              href="/top/favorites"
+              href="/top/filter/favorites"
               className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
             >
               <span>View More</span>
