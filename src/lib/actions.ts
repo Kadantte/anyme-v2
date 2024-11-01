@@ -120,3 +120,13 @@ export const getDetailAnimeCharacters = async (id: number) => {
     throw error;
   }
 };
+
+export const getAnimeByGenres = async (id: string) => {
+  try {
+    const res = await axiosInstance.get(`/anime?genres=${id}`);
+    return res.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
