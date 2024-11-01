@@ -30,10 +30,16 @@ export default function InfoContent({ detailAnimeList }: any) {
           <span className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-100 bg-gradient-to-r from-violet-500 to-fuchsia-500 py-1 px-2 rounded-lg">
             {detailAnimeList?.data.duration}
           </span>
+          <span className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-100 bg-gradient-to-r from-violet-500 to-fuchsia-500 py-1 px-2 rounded-lg">
+            &#9733; {detailAnimeList?.data.score}
+          </span>
+          <span className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-100 bg-gradient-to-r from-violet-500 to-fuchsia-500 py-1 px-2 rounded-lg">
+            &#x2764; {detailAnimeList?.data.favorites}
+          </span>
         </div>
         <div className="flex items-center gap-x-4 text-neutral-100 mt-4 md:mt-5">
           <Link
-            href={detailAnimeList?.data.trailer.url}
+            href={detailAnimeList?.data.trailer.url || ''}
             target="_blank"
             className="flex items-center gap-x-2 text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] border border-neutral-100 px-2 md:px-4 py-1 md:py-2 rounded-lg hover:bg-neutral-100 hover:text-neutral-950 transition-colors duration-300 ease-in-out"
           >
@@ -46,7 +52,7 @@ export default function InfoContent({ detailAnimeList }: any) {
         <p className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-200 mt-4 md:mt-6 text-balance">
           {detailAnimeList?.data.synopsis}
         </p>
-        <div className="flex flex-wrap gap-x-2 mt-4">
+        <div className="flex flex-wrap gap-2 mt-4">
           {detailAnimeList?.data.genres.map((genre: any) => (
             <span
               key={genre.mal_id}

@@ -29,9 +29,11 @@ export default function DetailAnimeSection({
   return (
     <section
       role="img"
-      aria-label={detailAnimeList?.data.title}
+      aria-label={detailAnimeList?.data.title || 'Detail Anime'}
       style={{
-        backgroundImage: `url(${detailAnimeList?.data.trailer.images.large_image_url})`,
+        backgroundImage: `url(${
+          detailAnimeList?.data.trailer.images.large_image_url || '/hero.jpg'
+        })`,
       }}
       className="w-full bg-cover bg-center"
     >
