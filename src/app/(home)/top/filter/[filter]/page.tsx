@@ -16,7 +16,7 @@ export default function TopAnimeByFilterPage({
   });
 
   return (
-    <div className="h-screen w-full bg-red-800">
+    <div>
       {data?.data?.map((item: any) => (
         <div key={item.mal_id}>{item.title}</div>
       ))}

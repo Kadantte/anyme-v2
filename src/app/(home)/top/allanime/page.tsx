@@ -1,18 +1,31 @@
 'use client';
 
+import AnimeGrid from '@/components/AnimeGrid';
+import TopHeroSection from '@/components/top/TopHeroSection';
 import { getTopAnime } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
 
 export default function TopAllAnimePage() {
-  const { data, isLoading, error } = useQuery({
+  const {
+    data: topAllAnimeList,
+    isLoading,
+    error,
+  } = useQuery({
     queryKey: ['topAnime'],
     queryFn: () => getTopAnime({ type: '', filter: '' }),
   });
   return (
     <div>
-      {data?.data?.map((item: any) => (
-        <div key={item.mal_id}>{item.title}</div>
-      ))}
+      <TopHeroSection
+        topHeroImage="/top-anime.jpg"
+        heroTitle="Top Anime"
+        heroSubtitle="Top Ranked Anime of All Time"
+      />
+      <section className="bg-neutral-950 pb-4">
+        <div className="wrapper">
+          <AnimeGrid data={topAllAnimeList} />
+        </div>
+      </section>
     </div>
   );
 }
