@@ -1,9 +1,8 @@
 'use client';
 
+import ViewMoreButton from '@/components/ViewMoreButton';
 import { getSeasonalAnime } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
-import { ChevronsRight } from 'lucide-react';
-import Link from 'next/link';
 import SeasonalAnimeContent from './SeasonalAnimeContent';
 import SeasonalLoading from './SeasonalLoading';
 
@@ -32,22 +31,10 @@ export default function SeasonalAnimeSection() {
               Fall 2024
             </span>
           </div>
-          <Link
-            href="/"
-            className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 hidden md:flex items-center gap-x-1"
-          >
-            <span>View More</span>
-            <ChevronsRight />
-          </Link>
+          <ViewMoreButton href="/seasonal" display="hidden md:flex" />
         </div>
         <SeasonalAnimeContent seasonalList={seasonalList} />
-        <Link
-          href={'/'}
-          className="flex items-center gap-x-1 justify-center mt-2 text-[1rem] text-violet-500 md:hidden"
-        >
-          <span>View More</span>
-          <ChevronsRight />
-        </Link>
+        <ViewMoreButton href="/seasonal" display="flex md:hidden" />
       </div>
     </section>
   );

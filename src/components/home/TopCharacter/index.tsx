@@ -1,11 +1,10 @@
 'use client';
 
+import ViewMoreButton from '@/components/ViewMoreButton';
 import { getTopCharacter } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
 import TopCharacterContent from './TopCharacterContent';
 import TopCharacterLoading from './TopCharacterLoading';
-import Link from 'next/link';
-import { ChevronsRight } from 'lucide-react';
 
 export default function TopCharacterSection() {
   const {
@@ -27,13 +26,7 @@ export default function TopCharacterSection() {
           Top Character
         </h1>
         <TopCharacterContent topCharacterList={topCharacterList} />
-        <Link
-          href="/top/character"
-          className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
-        >
-          <span>View More</span>
-          <ChevronsRight />
-        </Link>
+        <ViewMoreButton href="/top/character" display="flex" />
       </div>
     </section>
   );

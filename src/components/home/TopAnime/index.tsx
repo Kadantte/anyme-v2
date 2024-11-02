@@ -10,8 +10,6 @@ import {
   TopUpcoming,
 } from './TopAnime';
 import TopAnimeMobile from './TopAnimeMobile';
-import Link from 'next/link';
-import { ChevronsRight } from 'lucide-react';
 
 export default function TopAnimeSection() {
   return (
@@ -32,63 +30,21 @@ export default function TopAnimeSection() {
           </TabsList>
           <TabsContent value="animes">
             <AllAnime />
-            <Link
-              href="/top/allanime"
-              className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
-            >
-              <span>View More</span>
-              <ChevronsRight />
-            </Link>
           </TabsContent>
           <TabsContent value="airing">
             <TopAiring />
-            <Link
-              href="/top/filter/airing"
-              className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
-            >
-              <span>View More</span>
-              <ChevronsRight />
-            </Link>
           </TabsContent>
           <TabsContent value="upcoming">
             <TopUpcoming />
-            <Link
-              href="/top/filter/upcoming"
-              className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
-            >
-              <span>View More</span>
-              <ChevronsRight />
-            </Link>
           </TabsContent>
           <TabsContent value="movies">
             <TopMovies />
-            <Link
-              href="/top/type/movies"
-              className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
-            >
-              <span>View More</span>
-              <ChevronsRight />
-            </Link>
           </TabsContent>
           <TabsContent value="popular">
             <PopularAnimes />
-            <Link
-              href="/top/filter/bypopularity"
-              className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
-            >
-              <span>View More</span>
-              <ChevronsRight />
-            </Link>
           </TabsContent>
           <TabsContent value="favorite">
             <FavoriteAnimes />
-            <Link
-              href="/top/filter/favorite"
-              className="text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] text-violet-500 flex items-center justify-center gap-x-1 mt-2 md:mt-3 lg:mt-4"
-            >
-              <span>View More</span>
-              <ChevronsRight />
-            </Link>
           </TabsContent>
         </Tabs>
       </div>

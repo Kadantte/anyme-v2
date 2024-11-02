@@ -2,6 +2,7 @@
 
 import AnimeGrid from '@/components/AnimeGrid';
 import AnimeGridLoading from '@/components/AnimeGridLoading';
+import ViewMoreButton from '@/components/ViewMoreButton';
 import { getTopAnime } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
 
@@ -19,7 +20,12 @@ export function AllAnime() {
   if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
-  return <AnimeGrid data={allAnimeList} />;
+  return (
+    <>
+      <AnimeGrid data={allAnimeList} />
+      <ViewMoreButton href="/top/allanime" display="flex" />
+    </>
+  );
 }
 
 export function TopAiring() {
@@ -36,7 +42,12 @@ export function TopAiring() {
   if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
-  return <AnimeGrid data={topAiringList} />;
+  return (
+    <>
+      <AnimeGrid data={topAiringList} />
+      <ViewMoreButton href="/top/filter/airing" display="flex" />
+    </>
+  );
 }
 
 export function TopUpcoming() {
@@ -53,7 +64,12 @@ export function TopUpcoming() {
   if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
-  return <AnimeGrid data={topUpcomingList} />;
+  return (
+    <>
+      <AnimeGrid data={topUpcomingList} />
+      <ViewMoreButton href="/top/filter/upcoming" display="flex" />
+    </>
+  );
 }
 
 export function TopMovies() {
@@ -70,7 +86,12 @@ export function TopMovies() {
   if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
-  return <AnimeGrid data={topMoviesList} />;
+  return (
+    <>
+      <AnimeGrid data={topMoviesList} />
+      <ViewMoreButton href="/top/type/movie" display="flex" />
+    </>
+  );
 }
 
 export function PopularAnimes() {
@@ -87,7 +108,12 @@ export function PopularAnimes() {
   if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
-  return <AnimeGrid data={popularList} />;
+  return (
+    <>
+      <AnimeGrid data={popularList} />
+      <ViewMoreButton href="/top/filter/bypopularity" display="flex" />
+    </>
+  );
 }
 
 export function FavoriteAnimes() {
@@ -104,5 +130,10 @@ export function FavoriteAnimes() {
   if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
 
-  return <AnimeGrid data={topFavoriteList} />;
+  return (
+    <>
+      <AnimeGrid data={topFavoriteList} />
+      <ViewMoreButton href="/top/filter/favorite" display="flex" />
+    </>
+  );
 }
