@@ -100,7 +100,8 @@ const OverlayHero = () => {
   return (
     <>
       <div className="absolute z-10 h-full w-full bg-gradient-to-t from-neutral-950" />
-      <div className="absolute z-10 h-full w-full bg-gradient-to-r via-transparent from-neutral-950" />
+      <div className="absolute z-10 h-full w-full bg-gradient-to-r from-neutral-950 via-transparent" />
+      <div className="absolute z-10 h-full w-full bg-gradient-to-b from-neutral-950 via-transparent" />
     </>
   );
 };

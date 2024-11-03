@@ -76,3 +76,11 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+html {
+  overflow-x: hidden;
+}
+
+body[data-scroll-locked] {
+  min-width: 100%;
+}
