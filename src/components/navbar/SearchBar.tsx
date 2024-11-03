@@ -10,10 +10,9 @@ import {
 import { getAnimeSearch } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
 import { Search } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
+import SearchBarContent from './SearchBarContent';
 
 export default function SearchBar() {
   const [query, setQuery] = useState<string>('');
@@ -60,52 +59,12 @@ export default function SearchBar() {
                 Search results for{' '}
                 <span className="font-bold text-neutral-200">{query}</span>
               </span>
-              <div className="flex flex-col gap-y-1 pt-1">
-                {isLoading && (
-                  <span className="text-[0.9rem] text-neutral-300">
-                    loading...
-                  </span>
-                )}
-                {error && (
-                  <span className="text-[0.9rem] text-neutral-300">
-                    {error.message}
-                  </span>
-                )}
-                {query === '' ? (
-                  <span className="text-[0.9rem] text-neutral-300">
-                    Type something to search
-                  </span>
-                ) : searchAnimeList?.data.length === 0 ? (
-                  <span className="text-[0.9rem] text-neutral-300">
-                    no results
-                  </span>
-                ) : (
-                  searchAnimeList?.data.map((search: any) => (
-                    <Link
-                      href={`/detail/${search.mal_id}`}
-                      key={search.mal_id}
-                      className="flex items-center gap-x-2"
-                    >
-                      <Image
-                        src={search.images.webp.large_image_url}
-                        alt={search.title}
-                        width={1000}
-                        height={1000}
-                        className="min-h-[50px] min-w-[50px] w-[50px] h-[50px] object-cover rounded-lg"
-                      />
-                      <div>
-                        <h2 className="text-[0.9rem] text-neutral-300">
-                          {search.title}
-                        </h2>
-                        <h3 className="text-[0.7rem] text-neutral-400">
-                          ({search.type},{' '}
-                          {search.year === null ? '??' : search.year})
-                        </h3>
-                      </div>
-                    </Link>
-                  ))
-                )}
-              </div>
+              <SearchBarContent
+                isLoading={isLoading}
+                error={error}
+                query={query}
+                searchAnimeList={searchAnimeList}
+              />
             </div>
           </CommandList>
         </Command>
