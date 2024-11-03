@@ -50,8 +50,8 @@ export default function NavAnime() {
           <Link
             key={index}
             href={href}
-            className={`px-2 py-1 rounded-md hover:bg-neutral-800 ${
-              pathname === href ? 'bg-neutral-800' : ''
+            className={`px-2 py-1 rounded-md hover:bg-violet-800 ${
+              pathname === href ? 'bg-violet-800' : ''
             }`}
           >
             {label}

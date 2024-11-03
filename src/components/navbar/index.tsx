@@ -6,8 +6,10 @@ import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa6';
 import NavAnime from './NavAnime';
 import SearchBar from './SearchBar';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isScroll, setIsScroll] = useState(false);
 
   useEffect(() => {
@@ -40,20 +42,26 @@ export default function Navbar() {
             </Link>
             <Link
               href="/"
-              className="text-neutral-200 text-[1rem] font-medium hover:text-neutral-50"
+              className={`text-neutral-200 text-[1rem] font-medium hover:text-violet-500 ${
+                pathname === '/' ? 'text-violet-500' : ''
+              }`}
             >
               Home
             </Link>
             <NavAnime />
             <Link
               href="/"
-              className="text-neutral-200 text-[1rem] font-medium hover:text-neutral-50"
+              className={`text-neutral-200 text-[1rem] font-medium hover:text-violet-500 ${
+                pathname === '/seasons' ? 'text-violet-500' : ''
+              }`}
             >
               Seasons
             </Link>
             <Link
               href="/"
-              className="text-neutral-200 text-[1rem] font-medium hover:text-neutral-50"
+              className={`text-neutral-200 text-[1rem] font-medium hover:text-violet-500 ${
+                pathname === '/signin' ? 'text-violet-500' : ''
+              }`}
             >
               Sign In
             </Link>
@@ -62,11 +70,11 @@ export default function Navbar() {
             <SearchBar />
             <Link
               href={'https://github.com/rfkyalf/anyme-v2'}
-              className="text-neutral-200 hover:text-neutral-50"
+              className="text-neutral-200 hover:text-violet-500"
             >
               <FaGithub className="size-6" />
             </Link>
-            <div className="text-neutral-200 hover:text-neutral-50">
+            <div className="text-neutral-200 hover:text-violet-500">
               <BsFillMoonStarsFill className="size-5" />
             </div>
           </div>

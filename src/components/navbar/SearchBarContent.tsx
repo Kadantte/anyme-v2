@@ -25,13 +25,13 @@ export default function SearchBarContent({
           Type something to search
         </span>
       ) : searchAnimeList?.data.length === 0 ? (
-        <span className="text-[0.9rem] text-neutral-300">no results</span>
+        <span className="text-[0.9rem] text-neutral-300">No results</span>
       ) : (
         searchAnimeList?.data.map((search: any) => (
           <Link
             href={`/detail/${search.mal_id}`}
             key={search.mal_id}
-            className="flex items-center gap-x-2"
+            className="flex items-center gap-x-2 hover:bg-violet-800 p-1 rounded-lg"
           >
             <Image
               src={search.images.webp.large_image_url}

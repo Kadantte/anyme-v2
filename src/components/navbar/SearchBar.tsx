@@ -30,7 +30,6 @@ export default function SearchBar() {
 
   const handleSearch = useDebouncedCallback((q: string) => {
     setQuery(q);
-    console.log(q);
   }, 500);
 
   return (
@@ -55,7 +54,7 @@ export default function SearchBar() {
               handleSearch((e.target as HTMLInputElement).value)
             }
           />
-          <CommandList className="border-t border-neutral-700 px-2 max-h-[300px] md:max-h-[400px] overflow-y-auto pb-2">
+          <CommandList className="border-t border-neutral-700 px-2 no-scrollbar max-h-[300px] md:max-h-[400px] overflow-y-auto pb-2">
             <div>
               <span className="text-[0.7rem] text-neutral-600">
                 Search results for{' '}
