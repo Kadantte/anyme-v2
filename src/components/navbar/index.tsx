@@ -60,9 +60,12 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-x-4">
             <SearchBar />
-            <div className="text-neutral-200 hover:text-neutral-50">
+            <Link
+              href={'https://github.com/rfkyalf/anyme-v2'}
+              className="text-neutral-200 hover:text-neutral-50"
+            >
               <FaGithub className="size-6" />
-            </div>
+            </Link>
             <div className="text-neutral-200 hover:text-neutral-50">
               <BsFillMoonStarsFill className="size-5" />
             </div>

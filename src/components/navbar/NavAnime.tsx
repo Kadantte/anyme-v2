@@ -7,7 +7,7 @@ import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const navAnimeList = [
+export const navAnimeList = [
   {
     href: '/top/allanime',
     label: 'Top Anime',
