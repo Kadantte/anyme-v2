@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <section
-      className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${
+      className={`hidden md:block fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${
         isScroll
           ? 'bg-neutral-950/60 bg-clip-padding backdrop-filter backdrop-blur backdrop-saturate-100 backdrop-contrast-100 shadow shadow-neutral-950'
           : ''
@@ -35,7 +35,9 @@ export default function Navbar() {
           }`}
         >
           <div className="flex items-center gap-x-8">
-            <h1 className="text-[1.4rem] font-bold text-neutral-50">AnyMe.</h1>
+            <Link href="/" className="text-[1.4rem] font-bold text-neutral-50">
+              AnyMe.
+            </Link>
             <Link
               href="/"
               className="text-neutral-200 text-[1rem] font-medium hover:text-neutral-50"

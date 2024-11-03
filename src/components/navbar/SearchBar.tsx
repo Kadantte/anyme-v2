@@ -36,14 +36,14 @@ export default function SearchBar() {
   return (
     <Dialog onOpenChange={() => setQuery('')}>
       <DialogTrigger className="text-neutral-200 hover:text-neutral-50">
-        <Search className="size-6" />
+        <Search className="size-5 md:size-6" />
       </DialogTrigger>
-      <DialogContent className="w-[50%] flex flex-col bg-gradient-to-tl from-neutral-900 via-neutral-900 to-neutral-800 border-none">
+      <DialogContent className="w-[90%] md:w-[50%] flex flex-col bg-gradient-to-tl from-neutral-900 via-neutral-900 to-neutral-800 border-none rounded-lg">
         <DialogHeader>
-          <DialogTitle className="text-[1.5rem] font-bold text-neutral-50">
+          <DialogTitle className="text-[1.5rem] font-bold text-neutral-50 text-start">
             Search
           </DialogTitle>
-          <DialogDescription className="text-[1rem] text-neutral-300">
+          <DialogDescription className="text-[1rem] text-neutral-300 text-start">
             Discover anime by title
           </DialogDescription>
         </DialogHeader>
@@ -55,7 +55,7 @@ export default function SearchBar() {
               handleSearch((e.target as HTMLInputElement).value)
             }
           />
-          <CommandList className="border-t border-neutral-700 px-2 max-h-[400px] overflow-y-auto pb-2">
+          <CommandList className="border-t border-neutral-700 px-2 max-h-[300px] md:max-h-[400px] overflow-y-auto pb-2">
             <div>
               <span className="text-[0.7rem] text-neutral-600">
                 Search results for{' '}

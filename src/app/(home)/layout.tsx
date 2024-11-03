@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import MobileNavbar from '@/components/mobile-navbar';
 import Navbar from '@/components/navbar';
 
 export default function HomeLayout({
@@ -9,6 +10,7 @@ export default function HomeLayout({
   return (
     <>
       <Navbar />
+      <MobileNavbar />
       {children}
       <Footer />
     </>
