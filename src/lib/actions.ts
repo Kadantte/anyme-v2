@@ -1,8 +1,12 @@
 import axios from 'axios';
+import rateLimit from 'axios-rate-limit';
 
-const axiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
-});
+const axiosInstance = rateLimit(
+  axios.create({
+    baseURL: process.env.NEXT_PUBLIC_API_URL,
+  }),
+  { maxRequests: 1, perMilliseconds: 1000 }
+);
 
 export const getHeroes = async () => {
   try {

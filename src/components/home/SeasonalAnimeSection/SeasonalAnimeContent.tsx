@@ -49,6 +49,7 @@ export default function SeasonalAnimeContent({ seasonalList }: any) {
           <Link
             href={`/detail/${seasonal.mal_id}`}
             key={seasonal.mal_id}
+            target="_blank"
             className="flex-shrink-0 snap-always snap-end relative rounded-xl overflow-hidden group cursor-pointer"
           >
             <HoverCardEffect data={seasonal} />

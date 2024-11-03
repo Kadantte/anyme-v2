@@ -10,6 +10,7 @@ export default function AnimeGrid({ data }: any) {
           key={`${anime.mal_id}-${index}`}
           className="relative h-[250px] md:h-[320px] w-full rounded-xl bg-cover overflow-hidden group cursor-pointer"
           style={{ backgroundImage: `url(${anime.images.jpg.image_url})` }}
+          target="_blank"
         >
           <HoverCardEffect data={anime} />
           <div className="absolute h-full w-full bg-gradient-to-t from-neutral-900 via-transparent  top-0" />

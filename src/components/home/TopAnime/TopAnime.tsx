@@ -14,7 +14,6 @@ export function AllAnime() {
   } = useQuery({
     queryKey: ['allAnime'],
     queryFn: () => getTopAnime({ type: '', filter: '' }),
-    gcTime: 1000,
   });
 
   if (isLoading) return <AnimeGridLoading />;
@@ -36,7 +35,6 @@ export function TopAiring() {
   } = useQuery({
     queryKey: ['topAiring'],
     queryFn: () => getTopAnime({ type: '', filter: 'airing' }),
-    gcTime: 1000,
   });
 
   if (isLoading) return <AnimeGridLoading />;
@@ -58,7 +56,6 @@ export function TopUpcoming() {
   } = useQuery({
     queryKey: ['topUpcoming'],
     queryFn: () => getTopAnime({ type: '', filter: 'upcoming' }),
-    gcTime: 1000,
   });
 
   if (isLoading) return <AnimeGridLoading />;
@@ -80,7 +77,6 @@ export function TopMovies() {
   } = useQuery({
     queryKey: ['topMovies'],
     queryFn: () => getTopAnime({ type: 'movie', filter: '' }),
-    gcTime: 1000,
   });
 
   if (isLoading) return <AnimeGridLoading />;
@@ -102,7 +98,6 @@ export function PopularAnimes() {
   } = useQuery({
     queryKey: ['popularAnime'],
     queryFn: () => getTopAnime({ type: '', filter: 'bypopularity' }),
-    gcTime: 1000,
   });
 
   if (isLoading) return <AnimeGridLoading />;
@@ -124,7 +119,6 @@ export function FavoriteAnimes() {
   } = useQuery({
     queryKey: ['topFavorite'],
     queryFn: () => getTopAnime({ type: '', filter: 'favorite' }),
-    gcTime: 1000,
   });
 
   if (isLoading) return <AnimeGridLoading />;

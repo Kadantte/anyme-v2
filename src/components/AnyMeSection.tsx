@@ -1,4 +1,5 @@
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa6';
+import Link from 'next/link';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 
 export default function AnyMeSection() {
   return (
@@ -31,9 +32,15 @@ export default function AnyMeSection() {
                   Follow us on
                 </span>
                 <div className="flex items-center gap-x-4 text-neutral-200">
-                  <FaLinkedin className="size-6 md:size-7 lg:size-8" />
-                  <FaInstagram className="size-6 md:size-7 lg:size-8" />
-                  <FaFacebook className="size-6 md:size-7 lg:size-8" />
+                  <Link href={'https://github.com/rfkyalf'}>
+                    <FaGithub className="size-5 md:size-5 lg:size-6" />
+                  </Link>
+                  <Link href={'https://www.linkedin.com/in/rifkyalfarez'}>
+                    <FaLinkedin className="size-5 md:size-5 lg:size-6" />
+                  </Link>
+                  <Link href={'https://www.instagram.com/rfkyalf/'}>
+                    <FaInstagram className="size-5 md:size-5 lg:size-6" />
+                  </Link>
                 </div>
               </div>
             </div>
