@@ -8,7 +8,7 @@ export default function TopHeroSection({
   topHeroImage: string;
 }) {
   return (
-    <section className="bg-neutral-950 py-2 md:py-4">
+    <section className="bg-neutral-950 py-2 md:pb-4 md:pt-20">
       <div
         className="relative wrapper h-[50vh] bg-cover bg-center bg-no-repeat rounded-xl"
         style={{ backgroundImage: `url(${topHeroImage})` }}

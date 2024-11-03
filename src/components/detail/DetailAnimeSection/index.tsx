@@ -37,7 +37,7 @@ export default function DetailAnimeSection({
       }}
       className="w-full bg-cover bg-center"
     >
-      <div className="bg-neutral-950/80 bg-clip-padding backdrop-filter backdrop-blur backdrop-saturate-100 backdrop-contrast-100">
+      <div className="bg-neutral-950/80 bg-clip-padding backdrop-filter backdrop-blur backdrop-saturate-100 backdrop-contrast-100 md:pt-[50px]">
         <div className="wrapper">
           <button
             onClick={() => router.back()}
