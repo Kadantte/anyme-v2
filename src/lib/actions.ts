@@ -130,3 +130,13 @@ export const getAnimeByGenres = async (id: string) => {
     throw error;
   }
 };
+
+export const getAnimeSearch = async (q: string) => {
+  try {
+    const res = await axiosInstance.get(`/anime?q=${q}`);
+    return res.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
