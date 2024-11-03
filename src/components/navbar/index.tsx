@@ -1,6 +1,5 @@
 'use client';
 
-import { Search } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
@@ -45,13 +44,13 @@ export default function Navbar() {
             </Link>
             <NavAnime />
             <Link
-              href="/seasons"
+              href="/"
               className="text-neutral-200 text-[1rem] font-medium hover:text-neutral-50"
             >
               Seasons
             </Link>
             <Link
-              href="/signin"
+              href="/"
               className="text-neutral-200 text-[1rem] font-medium hover:text-neutral-50"
             >
               Sign In
