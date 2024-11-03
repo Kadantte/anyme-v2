@@ -82,15 +82,6 @@ export default function MenuBar() {
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
-              className={`text-neutral-100 text-[1rem] pb-1 ${
-                pathname === '/season' ? 'text-violet-500' : ''
-              }`}
-            >
-              Seasons
-            </Link>
-            <Link
-              href="/"
-              onClick={() => setIsOpen(false)}
               className={`text-neutral-100 text-[1rem] ${
                 pathname === '/signin' ? 'text-violet-500' : ''
               }`}

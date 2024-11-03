@@ -49,14 +49,7 @@ export default function Navbar() {
               Home
             </Link>
             <NavAnime />
-            <Link
-              href="/"
-              className={`text-neutral-200 text-[1rem] font-medium hover:text-violet-500 ${
-                pathname === '/seasons' ? 'text-violet-500' : ''
-              }`}
-            >
-              Seasons
-            </Link>
+
             <Link
               href="/"
               className={`text-neutral-200 text-[1rem] font-medium hover:text-violet-500 ${
