@@ -105,9 +105,10 @@ export default function HeroContent({
 const OverlayHero = () => {
   return (
     <>
-      <div className="absolute z-10 h-full w-full bg-gradient-to-t from-neutral-950" />
-      <div className="absolute z-10 h-full w-full bg-gradient-to-r from-neutral-950 via-transparent" />
-      <div className="absolute z-10 h-full w-full bg-gradient-to-b from-neutral-950 via-transparent" />
+      <div className="absolute z-10 h-full w-full bg-gradient-to-t dark:from-neutral-950 " />
+      <div className="absolute z-10 h-full w-full bg-gradient-to-r dark:from-neutral-950 dark:via-transparent" />
+      <div className="absolute z-10 h-full w-full bg-gradient-to-b dark:from-neutral-950 dark:via-transparent" />
+      <div className="absolute z-10 h-full w-full bg-neutral-950/70 backdrop-blur-sm dark:hidden" />
     </>
   );
 };

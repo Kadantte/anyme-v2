@@ -16,9 +16,9 @@ export function ThemeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div>
+        <div className="cursor-pointer">
           <BsFillMoonStarsFill className="size-[20px] hidden dark:block text-neutral-200" />
-          <BsFillSunFill className="size-[20px] block dark:hidden text-neutral-800" />
+          <BsFillSunFill className="size-[20px] block dark:hidden text-neutral-200" />
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
