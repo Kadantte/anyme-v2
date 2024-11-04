@@ -1,4 +1,5 @@
 import HoverCardEffect from '@/components/HoverCard';
+import { toSlug } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -47,7 +48,7 @@ export default function SeasonalAnimeContent({ seasonalList }: any) {
       >
         {seasonalList?.data.map((seasonal: any) => (
           <Link
-            href={`/detail/${seasonal.mal_id}`}
+            href={`/detail/${seasonal.mal_id}?title=${toSlug(seasonal.title)}`}
             key={seasonal.mal_id}
             target="_blank"
             className="flex-shrink-0 snap-always snap-end relative rounded-xl overflow-hidden group cursor-pointer"

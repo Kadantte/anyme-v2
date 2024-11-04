@@ -18,3 +18,10 @@ export const toSlug = (text: string) => {
     .replace(/\s+/g, '-')
     .replace(/[^a-z0-9-]/g, '');
 };
+
+export const toTitleCase = (text: string) => {
+  return text
+    .split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};

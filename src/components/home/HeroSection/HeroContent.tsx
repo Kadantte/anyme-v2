@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { toSlug } from '@/lib/utils';
 import { Bookmark, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -49,7 +50,7 @@ export default function HeroContent({
               <p className="text-[13px] md:text-[17px] text-neutral-200 md:max-w-[650px] lg:max-w-[780px]">
                 {hero.synopsis.substring(0, 200)}...&nbsp;
                 <Link
-                  href={`/detail/${hero.mal_id}`}
+                  href={`/detail/${hero.mal_id}?title=${toSlug(hero.title)}`}
                   target="_blank"
                   className="text-violet-500 hover:text-violet-600 transition-colors duration-300 ease-in-out font-bold"
                 >

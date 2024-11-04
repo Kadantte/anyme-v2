@@ -1,3 +1,4 @@
+import { toSlug } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -29,7 +30,7 @@ export default function SearchBarContent({
       ) : (
         searchAnimeList?.data.map((search: any) => (
           <Link
-            href={`/detail/${search.mal_id}`}
+            href={`/detail/${search.mal_id}?title=${toSlug(search.title)}`}
             key={search.mal_id}
             target="_blank"
             className="flex items-center gap-x-2 hover:bg-violet-800 p-1 rounded-lg"

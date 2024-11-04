@@ -1,3 +1,4 @@
+import { toSlug } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,7 +11,9 @@ export default function MoreLikeThisContent({
     <>
       {moreLikeThisList?.data.slice(0, 25).map((moreLike: any) => (
         <Link
-          href={`/detail/${moreLike.entry.mal_id}`}
+          href={`/detail/${moreLike.entry.mal_id}?title=${toSlug(
+            moreLike.entry.title
+          )}`}
           key={moreLike.entry.mal_id}
           target="_blank"
           className="flex flex-col gap-y-2 hover:scale-105 transition-all duration-300"

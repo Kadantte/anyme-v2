@@ -2,6 +2,7 @@
 
 import { Skeleton } from '@/components/ui/skeleton';
 import { getGenres } from '@/lib/actions';
+import { toSlug } from '@/lib/utils';
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 
@@ -40,7 +41,7 @@ export default function DiscoverGenreSection() {
         <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 mt-3 md:mt-4 lg:mt-5">
           {genreList?.data.map((genre: any) => (
             <Link
-              href={`/genre/${genre.mal_id}`}
+              href={`/genre/${genre.mal_id}?name=${toSlug(genre.name)}`}
               key={genre.mal_id}
               target="_blank"
               className="text-neutral-50 text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] break-words border border-violet-500 px-2 py-1 rounded-lg transition-all duration-300 ease-in-out hover:bg-violet-500 hover:scale-105 cursor-pointer"
