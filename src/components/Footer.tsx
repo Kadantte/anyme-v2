@@ -71,12 +71,12 @@ function QuickLinks() {
 
 function TopAnimeLinks() {
   const links = [
-    { text: 'All Anime', href: '/top/allanime' },
-    { text: 'Top Airing', href: '/top/filter/airing' },
-    { text: 'Top Upcoming', href: '/top/filter/upcoming' },
-    { text: 'Top Movies', href: '/top/type/movie' },
-    { text: 'Most Popular', href: '/top/filter/bypopularity' },
-    { text: 'Most Favorited', href: '/top/filter/favorite' },
+    { text: 'All Anime', href: '/top/anime' },
+    { text: 'Top Airing', href: '/top/airing' },
+    { text: 'Top Upcoming', href: '/top/upcoming' },
+    { text: 'Top Movies', href: '/top/movie' },
+    { text: 'Most Popular', href: '/top/bypopularity' },
+    { text: 'Most Favorited', href: '/top/favorite' },
   ];
 
   return (

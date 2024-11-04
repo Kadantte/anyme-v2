@@ -9,27 +9,27 @@ import { usePathname } from 'next/navigation';
 
 export const navAnimeList = [
   {
-    href: '/top/allanime',
+    href: '/top/anime',
     label: 'Top Anime',
   },
   {
-    href: '/top/filter/airing',
+    href: '/top/airing',
     label: 'Top Airing',
   },
   {
-    href: '/top/filter/upcoming',
+    href: '/top/upcoming',
     label: 'Top Upcoming',
   },
   {
-    href: '/top/type/movie',
+    href: '/top/movie',
     label: 'Top Movies',
   },
   {
-    href: '/top/filter/bypopularity',
+    href: '/top/bypopularity',
     label: 'Most Popular',
   },
   {
-    href: '/top/filter/favorite',
+    href: '/top/favorite',
     label: 'Most Favorited',
   },
 ];

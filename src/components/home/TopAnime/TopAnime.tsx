@@ -22,7 +22,7 @@ export function AllAnime() {
   return (
     <>
       <AnimeGrid data={allAnimeList} />
-      <ViewMoreButton href="/top/allanime" display="flex" />
+      <ViewMoreButton href="/top/anime" display="flex" />
     </>
   );
 }
@@ -43,7 +43,7 @@ export function TopAiring() {
   return (
     <>
       <AnimeGrid data={topAiringList} />
-      <ViewMoreButton href="/top/filter/airing" display="flex" />
+      <ViewMoreButton href="/top/airing" display="flex" />
     </>
   );
 }
@@ -64,7 +64,7 @@ export function TopUpcoming() {
   return (
     <>
       <AnimeGrid data={topUpcomingList} />
-      <ViewMoreButton href="/top/filter/upcoming" display="flex" />
+      <ViewMoreButton href="/top/upcoming" display="flex" />
     </>
   );
 }
@@ -85,7 +85,7 @@ export function TopMovies() {
   return (
     <>
       <AnimeGrid data={topMoviesList} />
-      <ViewMoreButton href="/top/type/movie" display="flex" />
+      <ViewMoreButton href="/top/movie" display="flex" />
     </>
   );
 }
@@ -106,7 +106,7 @@ export function PopularAnimes() {
   return (
     <>
       <AnimeGrid data={popularList} />
-      <ViewMoreButton href="/top/filter/bypopularity" display="flex" />
+      <ViewMoreButton href="/top/bypopularity" display="flex" />
     </>
   );
 }
@@ -127,7 +127,7 @@ export function FavoriteAnimes() {
   return (
     <>
       <AnimeGrid data={topFavoriteList} />
-      <ViewMoreButton href="/top/filter/favorite" display="flex" />
+      <ViewMoreButton href="/top/favorite" display="flex" />
     </>
   );
 }
