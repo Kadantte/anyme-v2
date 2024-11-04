@@ -10,3 +10,11 @@ export const formattedNumber = (number: number) =>
     notation: 'compact',
     compactDisplay: 'short',
   }).format(number);
+
+export const toSlug = (text: string) => {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+};
