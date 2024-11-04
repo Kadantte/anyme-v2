@@ -5,6 +5,7 @@ import { getSeasonalAnime } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
 import SeasonalAnimeContent from './SeasonalAnimeContent';
 import SeasonalLoading from './SeasonalLoading';
+import { toTitleCase } from '@/lib/utils';
 
 export default function SeasonalAnimeSection() {
   const {
@@ -15,6 +16,10 @@ export default function SeasonalAnimeSection() {
     queryKey: ['seasonalAnime'],
     queryFn: () => getSeasonalAnime(),
   });
+
+  const currentSeasonData = seasonalList?.data[0];
+  const seasonName = currentSeasonData?.season || '??';
+  const seasonYear = currentSeasonData?.year || '??';
 
   if (isLoading) return <SeasonalLoading />;
   if (error) return <p>{error.message}</p>;
@@ -28,7 +33,7 @@ export default function SeasonalAnimeSection() {
               Seasonal Anime
             </h1>
             <span className="text-neutral-200 text-[1rem] md:text-[1.1rem] lg:text-[1.2rem]">
-              Fall 2024
+              {toTitleCase(seasonName)} {seasonYear}
             </span>
           </div>
           <ViewMoreButton href="/seasonal" display="hidden md:flex" />

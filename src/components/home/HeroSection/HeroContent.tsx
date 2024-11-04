@@ -79,7 +79,11 @@ export default function HeroContent({
             {/* Hero Button */}
             <div className="flex gap-x-8 items-center mt-6 md:mt-8 lg:mt-10">
               <Button
-                onClick={() => router.push(`/detail/${hero.mal_id}`)}
+                onClick={() =>
+                  router.push(
+                    `/detail/${hero.mal_id}?title=${toSlug(hero.title)}`
+                  )
+                }
                 className="flex items-center justify-center gap-x-2 rounded-lg text-neutral-50 text-[13px] md:text-[17px] font-medium"
               >
                 <span>Show Detail</span> <ChevronRight size={20} />
