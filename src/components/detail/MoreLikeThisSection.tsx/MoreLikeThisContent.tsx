@@ -15,7 +15,6 @@ export default function MoreLikeThisContent({
             moreLike.entry.title
           )}`}
           key={moreLike.entry.mal_id}
-          target="_blank"
           className="flex flex-col gap-y-2 hover:scale-105 transition-all duration-300"
         >
           <Image

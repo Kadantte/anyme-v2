@@ -13,13 +13,11 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
-import { FaGithub } from 'react-icons/fa6';
-import { BsFillMoonStarsFill } from 'react-icons/bs';
-import { navAnimeList } from '../navbar/NavAnime';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { ThemeToggle } from '../ThemeToggle';
+import { FaGithub } from 'react-icons/fa6';
+import { navAnimeList } from '../navbar/NavAnime';
 
 export default function MenuBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,7 +97,6 @@ export default function MenuBar() {
           >
             <FaGithub className="size-6" />
           </Link>
-          <ThemeToggle />
         </div>
       </SheetContent>
     </Sheet>

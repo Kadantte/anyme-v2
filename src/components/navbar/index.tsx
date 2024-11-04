@@ -1,13 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa6';
 import NavAnime from './NavAnime';
 import SearchBar from './SearchBar';
-import { usePathname } from 'next/navigation';
-import { ThemeToggle } from '../ThemeToggle';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -68,7 +66,6 @@ export default function Navbar() {
             >
               <FaGithub className="size-6" />
             </Link>
-            <ThemeToggle />
           </div>
         </nav>
       </div>

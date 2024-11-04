@@ -32,7 +32,6 @@ export default function SearchBarContent({
           <Link
             href={`/detail/${search.mal_id}?title=${toSlug(search.title)}`}
             key={search.mal_id}
-            target="_blank"
             className="flex items-center gap-x-2 hover:bg-violet-800 p-1 rounded-lg"
           >
             <Image
