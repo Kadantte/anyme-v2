@@ -13,6 +13,7 @@ import { Search } from 'lucide-react';
 import { useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import SearchBarContent from './SearchBarContent';
+import ViewMoreButton from '../ViewMoreButton';
 
 export default function SearchBar() {
   const [query, setQuery] = useState<string>('');
@@ -69,6 +70,13 @@ export default function SearchBar() {
             </div>
           </CommandList>
         </Command>
+        {query && (
+          <ViewMoreButton
+            href={`/search?q=${query}`}
+            display="flex !m-0 !text-[1rem]"
+            text="View All Results"
+          />
+        )}
       </DialogContent>
     </Dialog>
   );
