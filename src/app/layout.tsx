@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
 import ReactQueryProvider from '@/lib/ReactQueryProviders';
+import { ThemeProvider } from '@/lib/ThemeProviders';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -18,7 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${montserrat.className}`}>
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ReactQueryProvider>{children}</ReactQueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

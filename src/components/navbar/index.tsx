@@ -7,6 +7,7 @@ import { FaGithub } from 'react-icons/fa6';
 import NavAnime from './NavAnime';
 import SearchBar from './SearchBar';
 import { usePathname } from 'next/navigation';
+import { ThemeToggle } from '../ThemeToggle';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -67,9 +68,7 @@ export default function Navbar() {
             >
               <FaGithub className="size-6" />
             </Link>
-            <div className="text-neutral-200 hover:text-violet-500">
-              <BsFillMoonStarsFill className="size-5" />
-            </div>
+            <ThemeToggle />
           </div>
         </nav>
       </div>

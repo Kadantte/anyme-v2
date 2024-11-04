@@ -19,6 +19,7 @@ import { navAnimeList } from '../navbar/NavAnime';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
+import { ThemeToggle } from '../ThemeToggle';
 
 export default function MenuBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -98,9 +99,7 @@ export default function MenuBar() {
           >
             <FaGithub className="size-6" />
           </Link>
-          <div className="text-neutral-200 hover:text-neutral-50">
-            <BsFillMoonStarsFill className="size-5" />
-          </div>
+          <ThemeToggle />
         </div>
       </SheetContent>
     </Sheet>
