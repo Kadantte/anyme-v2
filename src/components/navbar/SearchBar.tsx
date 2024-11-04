@@ -34,7 +34,7 @@ export default function SearchBar() {
 
   return (
     <Dialog onOpenChange={() => setQuery('')}>
-      <DialogTrigger className="text-neutral-200 hover:text-neutral-50">
+      <DialogTrigger className="text-neutral-200 hover:text-violet-500">
         <Search className="size-5 md:size-6" />
       </DialogTrigger>
       <DialogContent className="w-[90%] md:w-[50%] flex flex-col bg-gradient-to-tl from-neutral-900 via-neutral-900 to-neutral-800 border-none rounded-lg">

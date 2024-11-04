@@ -39,7 +39,7 @@ export default function NavAnime() {
 
   return (
     <HoverCard openDelay={100} closeDelay={100}>
-      <HoverCardTrigger className="flex items-center gap-x-1 text-neutral-200 text-[1rem] font-medium hover:text-neutral-50 cursor-pointer">
+      <HoverCardTrigger className="flex items-center gap-x-1 text-neutral-200 text-[1rem] font-medium hover:text-violet-500 cursor-pointer">
         Anime <ChevronDown className={`size-6`} />
       </HoverCardTrigger>
       <HoverCardContent
