@@ -28,10 +28,19 @@ export const getDetailAnime = async (id: number) => {
   }
 };
 
-export const getSeasonalAnime = async () => {
+export const getSeasonalAnime = async (page: number) => {
   try {
-    const res = await axiosInstance.get(`/seasons/now`);
-    return res.data;
+    const res = await axiosInstance.get(`/seasons/now?page=${page}`);
+    const data = res.data;
+
+    const totalItem = res.data.pagination.items.total;
+    const itemPerPage = res.data.pagination.items.per_page;
+    const totalPage = Math.ceil(totalItem / itemPerPage);
+
+    return {
+      data: data.data,
+      totalPage: totalPage,
+    };
   } catch (error) {
     console.error('Error fetching data:', error);
     throw error;
