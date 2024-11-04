@@ -29,15 +29,15 @@ export default function SeasonalAnimeContent({ seasonalList }: any) {
   return (
     <div className="relative">
       <div className="absolute flex justify-between items-center w-full h-full pointer-events-none z-20">
-        <div className="bg-gradient-to-r from-neutral-950 h-full flex items-center justify-start pointer-events-auto">
+        <div className="bg-gradient-to-r from-neutral-50 dark:from-neutral-950 h-full flex items-center justify-start pointer-events-auto">
           <ChevronLeft
-            className="size-8 text-neutral-300 cursor-pointer"
+            className="size-8 text-neutral-700 dark:text-neutral-300 cursor-pointer"
             onClick={scrollLeft}
           />
         </div>
-        <div className="bg-gradient-to-l from-neutral-950 h-full flex items-center justify-end pointer-events-auto">
+        <div className="bg-gradient-to-l from-neutral-50 dark:from-neutral-950 h-full flex items-center justify-end pointer-events-auto">
           <ChevronRight
-            className="size-8 text-neutral-300 cursor-pointer"
+            className="size-8 text-neutral-700 dark:text-neutral-300 cursor-pointer"
             onClick={scrollRight}
           />
         </div>
@@ -62,17 +62,17 @@ export default function SeasonalAnimeContent({ seasonalList }: any) {
               className="w-[220px] h-[320px] object-cover"
               priority
             />
-            <div className="absolute h-full w-full bg-gradient-to-t from-neutral-900 rounded-xl top-0" />
+            <div className="absolute h-full w-full bg-gradient-to-t from-neutral-100/60 dark:from-neutral-900 rounded-xl top-0" />
             <div className="absolute bottom-0 top-0 h-full w-full p-2 flex flex-col justify-between">
               <div className="flex justify-between">
-                <span className="bg-green-500/75 px-2 py-1 rounded-lg text-neutral-200 text-[1rem]">
+                <span className="bg-green-500/75 px-2 py-1 rounded-lg text-neutral-900 dark:text-neutral-200 text-[1rem]">
                   Ep {seasonal.episodes === null ? '??' : seasonal.episodes}
                 </span>
-                <span className="bg-yellow-500/75 px-2 py-1 rounded-lg text-neutral-200 text-[1rem]">
+                <span className="bg-yellow-500/75 px-2 py-1 rounded-lg text-neutral-900 dark:text-neutral-200 text-[1rem]">
                   &#9733; {seasonal.score}
                 </span>
               </div>
-              <span className="text-neutral-200 text-[1rem]">
+              <span className="text-neutral-900 dark:text-neutral-200 text-[1rem] font-medium">
                 {seasonal.title}
               </span>
             </div>
