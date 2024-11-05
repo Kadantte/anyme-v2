@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: 'AnyMe | All About Anime',
     description:
       'AnyMe is your go-to anime hub, where you can explore, discover, and track your favorite shows effortlessly. Find the best recommendations and explore new anime by genre, popularity, or trends.',
-    images: '/opengraph-image.png',
+    images: '/opengraph-image.jpg',
     type: 'website',
     siteName: 'Anyme',
     locale: 'id_ID',
