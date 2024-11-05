@@ -91,15 +91,28 @@ export const getMoreLikeThisbyGenre = async (id: number) => {
 export const getTopAnime = async ({
   type = '',
   filter = '',
+  page = 1,
 }: {
   type?: string;
   filter?: string;
+  page?: number;
 }) => {
   try {
     const res = await axiosInstance.get(
-      `/top/anime?type=${type}&filter=${filter}`
+      `/top/anime?type=${type}&filter=${filter}&page=${page}`
     );
-    return res.data;
+    const data = res.data;
+
+    const totalItem = res.data.pagination.items.total;
+    const itemPerPage = res.data.pagination.items.per_page;
+    const totalPage = Math.ceil(totalItem / itemPerPage);
+    const currentPage = res.data.pagination.current_page;
+
+    return {
+      data: data.data,
+      totalPage: totalPage,
+      currentPage: currentPage,
+    };
   } catch (error) {
     console.error('Error fetching data:', error);
     throw error;
