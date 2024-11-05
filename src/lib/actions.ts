@@ -181,10 +181,27 @@ export const getAnimeByGenres = async (id: string, page: number) => {
   }
 };
 
-export const getAnimeSearch = async (q: string) => {
+export const getAnimeSearch = async ({
+  q,
+  page = 1,
+}: {
+  q: string;
+  page?: number;
+}) => {
   try {
-    const res = await axiosInstance.get(`/anime?q=${q}`);
-    return res.data;
+    const res = await axiosInstance.get(`/anime?q=${q}&page=${page}`);
+    const data = res.data;
+
+    const totalItem = res.data.pagination.items.total;
+    const itemPerPage = res.data.pagination.items.per_page;
+    const totalPage = Math.ceil(totalItem / itemPerPage);
+    const currentPage = res.data.pagination.current_page;
+
+    return {
+      data: data.data,
+      totalPage: totalPage,
+      currentPage: currentPage,
+    };
   } catch (error) {
     console.error('Error fetching data:', error);
     throw error;

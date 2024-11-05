@@ -24,7 +24,7 @@ export default function SearchBar() {
     error,
   } = useQuery({
     queryKey: ['search', query],
-    queryFn: () => getAnimeSearch(query),
+    queryFn: () => getAnimeSearch({ q: query }),
     enabled: query !== '',
     gcTime: 1000,
   });
