@@ -2,9 +2,11 @@
 
 import AnimeGrid from '@/components/AnimeGrid';
 import { getTopAnime } from '@/lib/actions';
-import { useQuery } from '@tanstack/react-query';
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import TopHeroSection from './TopHeroSection';
 import AnimeGridLoading from '../AnimeGridLoading';
+import { useState } from 'react';
+import Pagination from '../Pagination';
 
 export default function TopFilterContentSection({
   params,
@@ -13,19 +15,24 @@ export default function TopFilterContentSection({
     filter: string;
   };
 }) {
+  const [page, setPage] = useState(1);
   const {
     data: topAnimeFilterList,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['topAnime', params.filter],
-    queryFn: () => getTopAnime({ filter: params.filter }),
+    queryKey: ['topAnime', page, params.filter],
+    queryFn: () => getTopAnime({ filter: params.filter, page }),
+    placeholderData: keepPreviousData,
   });
+
+  const totalPages = topAnimeFilterList?.totalPage || 1;
+  const currentPage = topAnimeFilterList?.currentPage || 1;
 
   const subtitle: { title: string; subtitle: string }[] = [
     {
       title: 'airing',
-      subtitle: 'Most Popular Anime Currently Airing',
+      subtitle: 'Top Picks from the Current Anime Season',
     },
     {
       title: 'upcoming',
@@ -33,7 +40,7 @@ export default function TopFilterContentSection({
     },
     {
       title: 'bypopularity',
-      subtitle: 'Fan-Favorite Anime Hits',
+      subtitle: 'Popular Series You Will Love to Watch',
     },
     {
       title: 'favorite',
@@ -59,15 +66,31 @@ export default function TopFilterContentSection({
   return (
     <>
       <TopHeroSection
-        topHeroImage={topHeroImage}
+        topHeroImage={topHeroImage === null ? '/hero.jpg' : topHeroImage}
         heroTitle={`${heroTitle}`}
         heroSubtitle={`${heroSubtitle}`}
       />
       <section className="bg-neutral-950 pb-4">
         <div className="wrapper">
-          {isLoading && <AnimeGridLoading />}
-          {error && <p>{error.message}</p>}
-          <AnimeGrid data={topAnimeFilterList} />
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            setPage={setPage}
+            margin="mb-4"
+          />
+          {isLoading ? (
+            <AnimeGridLoading />
+          ) : error ? (
+            <p>{(error as Error).message}</p>
+          ) : (
+            <AnimeGrid data={topAnimeFilterList} showIndex={false} />
+          )}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            setPage={setPage}
+            margin="mt-4"
+          />
         </div>
       </section>
     </>
