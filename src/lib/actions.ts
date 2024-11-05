@@ -36,10 +36,12 @@ export const getSeasonalAnime = async (page: number) => {
     const totalItem = res.data.pagination.items.total;
     const itemPerPage = res.data.pagination.items.per_page;
     const totalPage = Math.ceil(totalItem / itemPerPage);
+    const currentPage = res.data.pagination.current_page;
 
     return {
       data: data.data,
       totalPage: totalPage,
+      currentPage: currentPage,
     };
   } catch (error) {
     console.error('Error fetching data:', error);

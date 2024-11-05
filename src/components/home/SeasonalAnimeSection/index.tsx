@@ -14,7 +14,7 @@ export default function SeasonalAnimeSection() {
     error,
   } = useQuery({
     queryKey: ['seasonalAnime'],
-    queryFn: () => getSeasonalAnime(),
+    queryFn: () => getSeasonalAnime(1),
   });
 
   const currentSeasonData = seasonalList?.data[0];
