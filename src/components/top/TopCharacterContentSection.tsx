@@ -15,7 +15,7 @@ export default function TopCharacterContentSection() {
     error,
   } = useQuery({
     queryKey: ['topCharacter', page],
-    queryFn: () => getTopCharacter(page),
+    queryFn: () => getTopCharacter({ page: page }),
     placeholderData: keepPreviousData,
   });
 
