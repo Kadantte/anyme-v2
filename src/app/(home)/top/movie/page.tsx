@@ -1,13 +1,7 @@
 import TopHeroSection from '@/components/top/TopHeroSection';
-import TopTypeContentSection from '@/components/top/TopTypeContentSection';
+import TopMovieContentSection from '@/components/top/TopTypeContentSection';
 
-export default function TopAnimeByTypePage({
-  params,
-}: {
-  params: {
-    type: string;
-  };
-}) {
+export default function TopAnimeMoviePage() {
   return (
     <div>
       <TopHeroSection
@@ -15,7 +9,7 @@ export default function TopAnimeByTypePage({
         heroTitle="Top Movies"
         heroSubtitle="Best Anime Movies to Watch"
       />
-      <TopTypeContentSection params={{ type: params.type }} />
+      <TopMovieContentSection />
     </div>
   );
 }
