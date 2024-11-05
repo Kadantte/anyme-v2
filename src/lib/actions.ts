@@ -119,7 +119,7 @@ export const getTopAnime = async ({
   }
 };
 
-export const getTopCharacter = async (page: number) => {
+export const getTopCharacter = async ({ page = 1 }: { page?: number }) => {
   try {
     const res = await axiosInstance.get(`/top/characters?page=${page}`);
     const data = res.data;
@@ -160,10 +160,21 @@ export const getDetailAnimeCharacters = async (id: number) => {
   }
 };
 
-export const getAnimeByGenres = async (id: string) => {
+export const getAnimeByGenres = async (id: string, page: number) => {
   try {
-    const res = await axiosInstance.get(`/anime?genres=${id}`);
-    return res.data;
+    const res = await axiosInstance.get(`/anime?genres=${id}&page=${page}`);
+    const data = res.data;
+
+    const totalItem = res.data.pagination.items.total;
+    const itemPerPage = res.data.pagination.items.per_page;
+    const totalPage = Math.ceil(totalItem / itemPerPage);
+    const currentPage = res.data.pagination.current_page;
+
+    return {
+      data: data.data,
+      totalPage: totalPage,
+      currentPage: currentPage,
+    };
   } catch (error) {
     console.error('Error fetching data:', error);
     throw error;
