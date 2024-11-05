@@ -1,5 +1,6 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import rateLimit from 'axios-rate-limit';
+import axiosRetry from 'axios-retry';
 
 const axiosInstance = rateLimit(
   axios.create({
@@ -7,6 +8,15 @@ const axiosInstance = rateLimit(
   }),
   { maxRequests: 1, perMilliseconds: 1000 }
 );
+
+axiosRetry(axiosInstance, {
+  retries: 3,
+  retryDelay: (retryCount: number) => {
+    return retryCount * 1000;
+  },
+  retryCondition: (error: AxiosError<unknown, any>) =>
+    error.response?.status === 429,
+});
 
 export const getHeroes = async () => {
   try {
