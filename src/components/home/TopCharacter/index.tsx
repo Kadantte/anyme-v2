@@ -13,7 +13,7 @@ export default function TopCharacterSection() {
     error,
   } = useQuery({
     queryKey: ['topCharacter'],
-    queryFn: () => getTopCharacter,
+    queryFn: () => getTopCharacter({ page: 1 }),
   });
 
   if (isLoading) return <TopCharacterLoading />;
