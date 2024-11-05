@@ -119,10 +119,21 @@ export const getTopAnime = async ({
   }
 };
 
-export const getTopCharacter = async () => {
+export const getTopCharacter = async (page: number) => {
   try {
-    const res = await axiosInstance.get(`/top/characters`);
-    return res.data;
+    const res = await axiosInstance.get(`/top/characters?page=${page}`);
+    const data = res.data;
+
+    const totalItem = res.data.pagination.items.total;
+    const itemPerPage = res.data.pagination.items.per_page;
+    const totalPage = Math.ceil(totalItem / itemPerPage);
+    const currentPage = res.data.pagination.current_page;
+
+    return {
+      data: data.data,
+      totalPage: totalPage,
+      currentPage: currentPage,
+    };
   } catch (error) {
     console.error('Error fetching data:', error);
     throw error;
