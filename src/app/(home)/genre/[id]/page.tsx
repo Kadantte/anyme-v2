@@ -1,5 +1,6 @@
 import GenreContentSection from '@/components/genre/GenreContentSection';
 import GenreTitleSection from '@/components/genre/GenreTitleSection';
+import { toTitleCase } from '@/lib/utils';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
@@ -11,11 +12,11 @@ export async function generateMetadata({
   searchParams: { name: string };
 }): Promise<Metadata | undefined> {
   return {
-    title: searchParams.name,
-    description: `${searchParams.name} Anime List`,
+    title: `${toTitleCase(searchParams.name)} Genre`,
+    description: `${toTitleCase(searchParams.name)} Anime List`,
     openGraph: {
-      title: searchParams.name,
-      description: `${searchParams.name} Anime List`,
+      title: `${toTitleCase(searchParams.name)} Genre`,
+      description: `${toTitleCase(searchParams.name)} Anime List`,
       type: 'website',
       locale: 'id_ID',
       url: `${process.env.NEXT_PUBLIC_BASE_URL}/genre/${params.id}?name=${searchParams.name}`,
