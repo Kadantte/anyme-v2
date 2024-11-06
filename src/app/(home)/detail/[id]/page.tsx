@@ -9,8 +9,10 @@ import { notFound } from 'next/navigation';
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: { id: number };
+  searchParams: { title: string };
 }): Promise<Metadata | undefined> {
   const detail = await getDetailAnime(params.id);
 
@@ -31,7 +33,7 @@ export async function generateMetadata({
       description: detail?.data.synopsis,
       type: 'website',
       locale: 'id_ID',
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/detail/${params.id}`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/detail/${params.id}?title=${searchParams.title}`,
       siteName: 'AnyMe',
       images: [
         {
