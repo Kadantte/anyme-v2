@@ -1,31 +1,31 @@
-'use client';
-
-import AnimeGrid from '@/components/AnimeGrid';
-import AnimeGridLoading from '@/components/AnimeGridLoading';
-import Pagination from '@/components/Pagination';
-import { getAnimeSearch } from '@/lib/actions';
+import SearchContent from '@/components/search/SearchContent';
 import { toTitleCase } from '@/lib/utils';
-import { keepPreviousData, useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+import { Metadata } from 'next';
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: { q: string };
+}): Promise<Metadata | undefined> {
+  return {
+    title: `Search - ${toTitleCase(searchParams.q)}`,
+    description: `Search results for ${toTitleCase(searchParams.q)}`,
+    openGraph: {
+      title: `Search - ${toTitleCase(searchParams.q)}`,
+      description: `Search results for ${toTitleCase(searchParams.q)}`,
+      type: 'website',
+      locale: 'id_ID',
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/search?q=${searchParams.q}`,
+      siteName: 'AnyMe',
+    },
+  };
+}
 
 export default function SearchPage({
   searchParams,
 }: {
   searchParams: { q: string };
 }) {
-  const [page, setPage] = useState(1);
-  const {
-    data: searchResultsList,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ['search', searchParams.q, page],
-    queryFn: () => getAnimeSearch({ q: searchParams.q, page: page }),
-    placeholderData: keepPreviousData,
-  });
-  const totalPages = searchResultsList?.totalPage || 1;
-  const currentPage = searchResultsList?.currentPage || 1;
-
   return (
     <div className="bg-neutral-950 pb-4 pt-[70px]">
       <div className="wrapper">
@@ -34,25 +34,7 @@ export default function SearchPage({
             Show results for {toTitleCase(searchParams.q)}:
           </h1>
         </div>
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          setPage={setPage}
-          margin="mb-4"
-        />
-        {isLoading ? (
-          <AnimeGridLoading />
-        ) : error ? (
-          <p>{(error as Error).message}</p>
-        ) : (
-          <AnimeGrid data={searchResultsList} showIndex={false} />
-        )}
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          setPage={setPage}
-          margin="mt-4"
-        />
+        <SearchContent searchParams={searchParams} />
       </div>
     </div>
   );
