@@ -30,7 +30,10 @@ export default function SearchBar() {
   });
 
   const handleSearch = useDebouncedCallback((q: string) => {
-    setQuery(q);
+    const trimmedQuery = q.trim();
+    if (trimmedQuery) {
+      setQuery(trimmedQuery);
+    }
   }, 500);
 
   return (
@@ -70,12 +73,14 @@ export default function SearchBar() {
             </div>
           </CommandList>
         </Command>
-        {query && (
+        {searchAnimeList?.data.length > 0 ? (
           <ViewMoreButton
             href={`/search?q=${query}`}
             display="flex !m-0 !text-[1rem]"
             text="View All Results"
           />
+        ) : (
+          ''
         )}
       </DialogContent>
     </Dialog>

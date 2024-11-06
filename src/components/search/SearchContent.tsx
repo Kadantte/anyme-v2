@@ -5,6 +5,7 @@ import AnimeGridLoading from '@/components/AnimeGridLoading';
 import Pagination from '@/components/Pagination';
 import { getAnimeSearch } from '@/lib/actions';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import { notFound } from 'next/navigation';
 import { useState } from 'react';
 
 export default function SearchContent({
@@ -24,6 +25,11 @@ export default function SearchContent({
   });
   const totalPages = searchResultsList?.totalPage || 1;
   const currentPage = searchResultsList?.currentPage || 1;
+
+  if (searchResultsList?.data.length === 0) {
+    return notFound();
+  }
+
   return (
     <>
       <Pagination
