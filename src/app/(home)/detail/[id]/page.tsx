@@ -14,12 +14,12 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const detail = await getDetailAnime(params.id);
 
-  if (!detail) {
+  if (detail.status === 404) {
     return {
       title: {
-        absolute: '404 - Project not found',
+        absolute: '404 - Not found',
       },
-      description: 'Project not found',
+      description: 'Not found',
     };
   }
 
@@ -42,7 +42,7 @@ export async function generateMetadata({
   };
 }
 
-export default function DetailAnimePage({
+export default async function DetailAnimePage({
   params,
   searchParams,
 }: {
@@ -50,6 +50,7 @@ export default function DetailAnimePage({
   searchParams: { title: string };
 }) {
   if (isNaN(Number(params.id))) return notFound();
+  if (!searchParams.title) return notFound();
 
   return (
     <div className="relative overflow-hidden">

@@ -1,5 +1,6 @@
 import GenreContentSection from '@/components/genre/GenreContentSection';
 import GenreTitleSection from '@/components/genre/GenreTitleSection';
+import { notFound } from 'next/navigation';
 
 export default function AnimeByGenrePage({
   params,
@@ -8,6 +9,9 @@ export default function AnimeByGenrePage({
   params: { id: string };
   searchParams: { name: string };
 }) {
+  if (isNaN(Number(params.id))) return notFound();
+  if (!searchParams.name) return notFound();
+
   return (
     <div>
       <section className="bg-neutral-950 pb-4 pt-[70px]">

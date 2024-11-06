@@ -38,9 +38,9 @@ export async function generateMetadata({
   if (!top) {
     return {
       title: {
-        absolute: '404 - Project not found',
+        absolute: '404 - Not found',
       },
-      description: 'Project not found',
+      description: 'Not found',
     };
   }
 

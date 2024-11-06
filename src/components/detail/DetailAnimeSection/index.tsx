@@ -3,9 +3,9 @@
 import InfoContent from '@/components/detail/DetailAnimeSection/InfoContent';
 import { getDetailAnime } from '@/lib/actions';
 import { useQuery } from '@tanstack/react-query';
-import InfoLoading from './InfoLoading';
 import { ChevronLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import InfoLoading from './InfoLoading';
 
 export default function DetailAnimeSection({
   params,

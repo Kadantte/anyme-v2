@@ -6,6 +6,7 @@ import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import AnimeGridLoading from '../AnimeGridLoading';
 import { useState } from 'react';
 import Pagination from '../Pagination';
+import { notFound } from 'next/navigation';
 
 export default function GenreContentSection({
   params,
@@ -25,6 +26,10 @@ export default function GenreContentSection({
 
   const totalPages = animeByGenreList?.totalPage || 1;
   const currentPage = animeByGenreList?.currentPage || 1;
+
+  if (animeByGenreList?.data.length === 0) {
+    notFound();
+  }
 
   if (isLoading) return <AnimeGridLoading />;
   if (error) return <p>{error.message}</p>;
