@@ -7,6 +7,7 @@ import TopHeroSection from './TopHeroSection';
 import AnimeGridLoading from '../AnimeGridLoading';
 import { useState } from 'react';
 import Pagination from '../Pagination';
+import { toTitleCase } from '@/lib/utils';
 
 export default function TopFilterContentSection({
   params,
@@ -57,7 +58,7 @@ export default function TopFilterContentSection({
       ? 'Most Popular'
       : params.filter === 'favorite'
       ? 'Most Favorited'
-      : 'Top ' + params.filter.charAt(0).toUpperCase() + params.filter.slice(1);
+      : 'Top ' + toTitleCase(params.filter);
 
   const topHeroImage = topAnimeFilterList?.data.map(
     (item: any) => item.trailer.images.maximum_image_url
