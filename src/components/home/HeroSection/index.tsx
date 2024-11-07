@@ -48,7 +48,7 @@ export default function HeroSection() {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <section className="relative h-screen w-full">
+    <section className="relative h-screen w-full overflow-hidden">
       <SliderButton prevIndex={prevIndex} nextIndex={nextIndex} />
       <IndicatorButton
         heroList={heroList}
