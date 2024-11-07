@@ -7,6 +7,9 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
+  verification: {
+    google: 'b0J4NqD2m6Y_-S1QAAOFGeQ_vZ2IEQl3PUt9tDfUUK8',
+  },
   title: {
     default: 'AnyMe | All About Anime',
     template: '%s | AnyMe',
