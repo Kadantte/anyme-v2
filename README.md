@@ -26,6 +26,7 @@
 - **📱 Responsive Design**: Enjoy a seamless experience on various devices and screen sizes.
 
 ## ⚙️ Prerequisites
+
 - **Node.js**
 - **npm** or **yarn** or **pnpm** or **bun** for package management
 
@@ -40,10 +41,12 @@ Follow the steps below to set up the project locally.
    ```
 
 2. Navigate to the project directory:
+
    ```bash
    cd anyme-v2
    ```
 3. Install the dependencies:
+
    ```bash
    npm install
    ```
@@ -51,6 +54,7 @@ Follow the steps below to set up the project locally.
 ## 🚀 Usage
 
 1. Start the development server:
+
    ```bash
    npm run dev
    ```
