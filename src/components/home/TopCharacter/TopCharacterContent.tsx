@@ -19,9 +19,9 @@ export default function TopCharacterContent({ topCharacterList }: any) {
           initial={{ opacity: 0, y: 60, scale: 0.5 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{
-            opacity: { duration: 1 },
-            y: { duration: 0.5 },
-            scale: { duration: 0.5 },
+            opacity: { duration: 0.5 },
+            y: { duration: 0.3 },
+            scale: { duration: 0.3 },
           }}
           viewport={{ once: true }}
           key={chara.mal_id}
