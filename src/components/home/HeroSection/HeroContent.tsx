@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { toSlug } from '@/lib/utils';
 import { Bookmark, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'nextjs-toploader/app';
 import { FaHeart, FaStar } from 'react-icons/fa6';
 
 export default function HeroContent({
