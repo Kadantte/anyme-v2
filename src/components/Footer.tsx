@@ -40,18 +40,18 @@ function AboutSection() {
 
 function SocialIcons() {
   return (
-    <div className="flex items-center gap-x-4 text-neutral-100 mt-3">
+    <div className="flex items-center gap-x-4 text-neutral-100  mt-3">
       <Link href="https://github.com/rfkyalf" aria-label="GitHub">
-        <FaGithub className="size-5 md:size-5 lg:size-6" />
+        <FaGithub className="size-5 md:size-5 lg:size-6 hover:text-violet-500" />
       </Link>
       <Link
         href="https://www.linkedin.com/in/rifkyalfarez"
         aria-label="LinkedIn"
       >
-        <FaLinkedin className="size-5 md:size-5 lg:size-6" />
+        <FaLinkedin className="size-5 md:size-5 lg:size-6 hover:text-violet-500" />
       </Link>
       <Link href="https://www.instagram.com/rfkyalf/" aria-label="Instagram">
-        <FaInstagram className="size-5 md:size-5 lg:size-6" />
+        <FaInstagram className="size-5 md:size-5 lg:size-6 hover:text-violet-500" />
       </Link>
     </div>
   );
