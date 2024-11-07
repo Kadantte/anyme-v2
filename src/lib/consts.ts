@@ -468,3 +468,5 @@ export const genreList = [
     count: 2029,
   },
 ];
+
+export const topFilterList = ['airing', 'upcoming', 'bypopularity', 'favorite'];

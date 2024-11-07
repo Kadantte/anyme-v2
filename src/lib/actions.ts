@@ -238,3 +238,25 @@ export const getTopMovies = async (page: number) => {
     throw error;
   }
 };
+
+export const getAnimes = async () => {
+  try {
+    let currentPage = 1;
+    let hasNextPage = true;
+    const allAnimes = [];
+
+    while (hasNextPage) {
+      const res = await axiosInstance.get(`/anime?page=${currentPage}`);
+      allAnimes.push(...res.data.data);
+
+      // Check if there’s a next page
+      hasNextPage = res.data.pagination.has_next_page;
+      currentPage++;
+    }
+
+    return { data: allAnimes };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
