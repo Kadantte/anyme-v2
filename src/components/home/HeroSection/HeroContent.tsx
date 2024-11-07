@@ -4,6 +4,7 @@ import { Bookmark, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'nextjs-toploader/app';
 import { FaHeart, FaStar } from 'react-icons/fa6';
+import { motion } from 'framer-motion';
 
 export default function HeroContent({
   heroList,
@@ -31,7 +32,12 @@ export default function HeroContent({
           }}
         >
           <OverlayHero />
-          <div className="relative z-20 h-full wrapper">
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+            className="relative z-20 h-full wrapper"
+          >
             {/* Most Favorited Label */}
             <span className="text-[13px] md:text-[17px] text-neutral-200 font-medium mb-4 md:mb-6 lg:mb-8 bg-gradient-to-r from-violet-600 to-fuchsia-600 w-fit p-2 rounded-lg">
               #{currentIndex + 1} Most Favorited Anime
@@ -94,7 +100,7 @@ export default function HeroContent({
                 <Bookmark size={20} /> <span>Bookmark</span>
               </Button>
             </div>
-          </div>
+          </motion.div>
         </div>
       ))}
     </>

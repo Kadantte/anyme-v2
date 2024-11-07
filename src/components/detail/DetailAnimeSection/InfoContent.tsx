@@ -17,7 +17,7 @@ export default function InfoContent({ detailAnimeList }: any) {
         <h1 className="text-[1.8rem] md:text-[2rem] lg:text-[2.2rem] xl:text-[2.4rem] font-bold text-neutral-50 mb-1 md:mb-2">
           {detailAnimeList?.data.title}
         </h1>
-        <div className="flex items-center gap-x-2">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-100 bg-gradient-to-r from-violet-500 to-fuchsia-500 py-1 px-2 rounded-lg">
             {detailAnimeList?.data.type}
           </span>
