@@ -130,11 +130,10 @@ function FooterBottom({ currentYear }: { currentYear: number }) {
   return (
     <div className="flex items-center justify-between border-t border-neutral-700 py-4">
       <span className="text-[0.9rem] md:text-[0.9rem] lg:text-[1rem] text-neutral-200">
-        © 2024 - {currentYear}{' '}
+        2024 - {currentYear}{' '}
         <Link href={'/'} className="hover:underline">
           AnyMe.
         </Link>{' '}
-        All Rights Reserved
       </span>
       <span className="text-[0.9rem] md:text-[0.9rem] lg:text-[1rem] text-neutral-200 ">
         Powered by{' '}
