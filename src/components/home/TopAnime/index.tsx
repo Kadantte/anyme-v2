@@ -10,11 +10,18 @@ import {
   TopUpcoming,
 } from './TopAnime';
 import TopAnimeMobile from './TopAnimeMobile';
+import { motion } from 'framer-motion';
 
 export default function TopAnimeSection() {
   return (
     <section className="bg-neutral-950 pb-8 md:pb-12">
-      <div className="wrapper">
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="wrapper"
+      >
         <h1 className="text-neutral-50 text-[1.4rem] md:text-[1.6rem] lg:text-[1.8rem] font-bold border-l-4 border-violet-500 pl-2 md:pl-3 lg:pl-4">
           Top Anime
         </h1>
@@ -47,7 +54,7 @@ export default function TopAnimeSection() {
             <FavoriteAnimes />
           </TabsContent>
         </Tabs>
-      </div>
+      </motion.div>
     </section>
   );
 }
