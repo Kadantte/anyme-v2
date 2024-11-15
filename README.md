@@ -8,6 +8,15 @@
 
 **AnyMe** is your go-to anime hub, where you can explore, discover, and track your favorite shows effortlessly. Find the best recommendations and explore new anime by genre, popularity, or trends.
 
+## 🧰 Tech Stack
+
+- **Next.js**: A React framework for building server-side rendered applications.
+- **TypeScript**: JavaScript with static typing for better developer experience and code quality.
+- **Tailwind CSS**: A utility-first CSS framework for creating responsive and modern designs.
+- **ShadCN**: A set of accessible, high-quality UI components built with React and Tailwind CSS for fast, modern design.
+- **React Query**: A library for fetching, caching, and syncing server data in React applications.
+- **Axios**: A promise-based HTTP client for making requests to external APIs.
+
 ## ✨ Key Features
 
 - **🖥️ Modern Stack**: Built with Next.js, TypeScript, and Tailwind CSS for a responsive and elegant design.
