@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AnyMe - Your Ultimate Anime Hub 🌸
 
-## Getting Started
+<div align="center" width="100%">
+   <img width="600" alt="anyme" src="https://i.imgur.com/B0WfZ4H.png">
+</div>
 
-First, run the development server:
+## 🌟 Introduction
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**AnyMe** is your go-to anime hub, where you can explore, discover, and track your favorite shows effortlessly. Find the best recommendations and explore new anime by genre, popularity, or trends.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧰 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: A React framework for building server-side rendered applications.
+- **TypeScript**: JavaScript with static typing for better developer experience and code quality.
+- **Tailwind CSS**: A utility-first CSS framework for creating responsive and modern designs.
+- **ShadCN**: A set of accessible, high-quality UI components built with React and Tailwind CSS for fast, modern design.
+- **React Query**: A library for fetching, caching, and syncing server data in React applications.
+- **Axios**: A promise-based HTTP client for making requests to external APIs.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## ✨ Key Features
 
-## Learn More
+- **🖥️ Modern Stack**: Built with Next.js, TypeScript, and Tailwind CSS for a responsive and elegant design.
+- **📚 Comprehensive Anime Information**: Access detailed information on anime titles, including synopses, genres, total episodes, and more.
+- **🏠 Home**: Discover the latest and most popular anime collections.
+- **🌟 Top Anime**: Find the top-rated anime titles.
+- **🍂 Seasonal Anime**: Browse anime based on the current season.
+- **📺 Top Airing**: Watch currently airing anime.
+- **📅 Top Upcoming**: Explore highly anticipated, upcoming anime titles.
+- **🎬 Top Movies**: Access complete information on top anime movies.
+- **🔥 Most Popular**: Explore the most popular anime, ranked by fans.
+- **💖 Most Favorited**: Discover the anime that fans have marked as their favorites.
+- **🎭 Anime by Genre**: Select anime based on your preferred genre.
+- **🔍 Search**: Quickly find any anime title with the search feature.
+- **🔖 Bookmark**: Save your favorite anime for easy access.
+- **📱 Responsive Design**: Enjoy a seamless experience on various devices and screen sizes.
 
-To learn more about Next.js, take a look at the following resources:
+## ⚙️ Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Node.js**
+- **npm** or **yarn** or **pnpm** or **bun** for package management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🛠️ Installation
 
-## Deploy on Vercel
+Follow the steps below to set up the project locally.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clone this repository:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   https://github.com/rfkyalf/anyme-v2.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd anyme-v2
+   ```
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## 🚀 Usage
+
+1. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+2. Access the application in your browser at http://localhost:3000.
