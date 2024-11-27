@@ -13,7 +13,7 @@ export default function TopAnimeMoviePage() {
   return (
     <div>
       <TopHeroSection
-        topHeroImage="/top-movies.jpg"
+        topHeroImage="/top-movies.webp"
         heroTitle="Top Movies"
         heroSubtitle="Best Anime Movies to Watch"
       />

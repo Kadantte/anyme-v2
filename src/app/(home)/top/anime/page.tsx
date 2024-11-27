@@ -13,7 +13,7 @@ export default function TopAllAnimePage() {
   return (
     <div>
       <TopHeroSection
-        topHeroImage="/top-anime.jpg"
+        topHeroImage="/top-anime.webp"
         heroTitle="Top Anime"
         heroSubtitle="Top Ranked Anime of All Time"
       />

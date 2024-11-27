@@ -7,7 +7,7 @@ export default function AnyMeSection() {
       <div className="wrapper">
         <section
           className="py-8 md:py-12 bg-cover bg-center bg-fixed relative"
-          style={{ backgroundImage: 'url(/anyme.jpg)' }}
+          style={{ backgroundImage: 'url(/anyme.webp)' }}
         >
           <div className="h-full w-full absolute top-0 bg-gradient-to-r from-neutral-950 via-transparent to-transparent" />
           <div className="h-full w-full absolute top-0 bg-gradient-to-l from-neutral-950 via-transparent to-transparent" />

@@ -67,7 +67,7 @@ export default function TopFilterContentSection({
   return (
     <>
       <TopHeroSection
-        topHeroImage={topHeroImage === null ? '/hero.jpg' : topHeroImage}
+        topHeroImage={topHeroImage === null ? '/hero.webp' : topHeroImage}
         heroTitle={`${heroTitle}`}
         heroSubtitle={`${heroSubtitle}`}
       />

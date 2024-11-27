@@ -37,7 +37,7 @@ export async function generateMetadata({
       siteName: 'AnyMe',
       images: [
         {
-          url: detail?.data.trailer.images.maximum_image_url || '/hero.jpg',
+          url: detail?.data.trailer.images.maximum_image_url || '/hero.webp',
         },
       ],
     },

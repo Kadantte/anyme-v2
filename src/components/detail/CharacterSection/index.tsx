@@ -32,7 +32,7 @@ export default function CharacterSection({
             <div
               key={chara.character.mal_id}
               style={{
-                backgroundImage: `url(${chara.character.images.jpg.image_url})`,
+                backgroundImage: `url(${chara.character.images.webp.image_url})`,
               }}
               className="relative h-[220px] md:h-[320px] w-full bg-center bg-cover bg-no-repeat rounded-xl overflow-hidden"
             >

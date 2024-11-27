@@ -33,7 +33,7 @@ export default function SeasonalAnimeContent() {
   return (
     <div>
       <TopHeroSection
-        topHeroImage={topHeroImage === null ? '/hero.jpg' : topHeroImage}
+        topHeroImage={topHeroImage === null ? '/hero.webp' : topHeroImage}
         heroTitle="Seasonal Spotlight"
         heroSubtitle={`Catch the most anticipated anime of the ${
           isLoading ? 'Loading...' : `${toTitleCase(seasonName)} ${seasonYear}`
