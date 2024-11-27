@@ -1,8 +1,24 @@
+'use client';
+
+import { useBookmarkAnime } from '@/lib/store';
 import { Bookmark, CirclePlay } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useShallow } from 'zustand/shallow';
 
 export default function InfoContent({ detailAnimeList }: any) {
+  const { bookmarks, addBookmark, removeBookmark } = useBookmarkAnime(
+    useShallow((state) => ({
+      bookmarks: state.bookmarks,
+      addBookmark: state.addBookmark,
+      removeBookmark: state.removeBookmark,
+    }))
+  );
+
+  const isBookmarked = bookmarks.some(
+    (item) => item.mal_id === detailAnimeList?.data.mal_id
+  );
+
   return (
     <div className="flex flex-col md:flex-row md:gap-x-4 lg:gap-x-6 xl:gap-x-8 pb-4 md:pb-8 lg:pb-10 xl:pb-12">
       <Image
@@ -45,8 +61,23 @@ export default function InfoContent({ detailAnimeList }: any) {
           >
             <CirclePlay /> Watch Trailer
           </Link>
-          <button className="flex items-center gap-x-2 text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] px-2 md:px-4 py-1 md:py-2 rounded-lg hover:bg-neutral-100 hover:text-neutral-950 transition-colors duration-300 ease-in-out">
-            <Bookmark /> Bookmark
+          <button
+            aria-label={isBookmarked ? 'Remove Bookmark' : 'Bookmark'}
+            title={isBookmarked ? 'Remove Bookmark' : 'Bookmark'}
+            onClick={
+              isBookmarked
+                ? () => removeBookmark(detailAnimeList?.data.mal_id)
+                : () =>
+                    addBookmark({
+                      mal_id: detailAnimeList?.data.mal_id,
+                      title: detailAnimeList?.data.title,
+                      images: detailAnimeList?.data.images.webp.large_image_url,
+                    })
+            }
+            className={`flex items-center gap-x-2 text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] px-2 md:px-4 py-1 md:py-2 rounded-lg hover:bg-neutral-100 hover:text-neutral-950 transition-colors duration-300 ease-in-out
+            ${isBookmarked ? 'bg-neutral-100 text-neutral-950' : ''}`}
+          >
+            <Bookmark /> {isBookmarked ? 'Bookmarked' : 'Bookmark'}
           </button>
         </div>
         <p className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-200 mt-4 md:mt-6 text-balance">

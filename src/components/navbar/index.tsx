@@ -50,12 +50,12 @@ export default function Navbar() {
             <NavAnime />
 
             <Link
-              href="/"
+              href="/bookmark"
               className={`text-neutral-200 text-[1rem] font-medium hover:text-violet-500 ${
-                pathname === '/signin' ? 'text-violet-500' : ''
+                pathname === '/bookmark' ? 'text-violet-500' : ''
               }`}
             >
-              Sign In
+              Bookmark
             </Link>
           </div>
           <div className="flex items-center gap-x-4">

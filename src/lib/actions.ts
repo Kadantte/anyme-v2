@@ -23,8 +23,7 @@ export const getHeroes = async () => {
     const res = await axiosInstance.get(`/top/anime?filter=favorite&limit=5`);
     return res.data;
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -33,8 +32,7 @@ export const getDetailAnime = async (id: number) => {
     const res = await axiosInstance.get(`/anime/${id}/full`);
     return res.data;
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -54,8 +52,7 @@ export const getSeasonalAnime = async (page: number) => {
       currentPage: currentPage,
     };
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -64,8 +61,7 @@ export const getAnimeReviews = async (id: number) => {
     const res = await axiosInstance.get(`/anime/${id}/reviews`);
     return res.data;
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -74,8 +70,7 @@ export const getMoreLikeThis = async (id: number) => {
     const res = await axiosInstance.get(`/anime/${id}/recommendations`);
     return res.data;
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -93,8 +88,7 @@ export const getMoreLikeThisbyGenre = async (id: number) => {
 
     return res.data;
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -124,8 +118,7 @@ export const getTopAnime = async ({
       currentPage: currentPage,
     };
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -145,8 +138,7 @@ export const getTopCharacter = async ({ page = 1 }: { page?: number }) => {
       currentPage: currentPage,
     };
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -155,8 +147,7 @@ export const getGenres = async () => {
     const res = await axiosInstance.get(`/genres/anime`);
     return res.data;
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -165,8 +156,7 @@ export const getDetailAnimeCharacters = async (id: number) => {
     const res = await axiosInstance.get(`/anime/${id}/characters`);
     return res.data;
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -186,8 +176,7 @@ export const getAnimeByGenres = async (id: string, page: number) => {
       currentPage: currentPage,
     };
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -213,8 +202,7 @@ export const getAnimeSearch = async ({
       currentPage: currentPage,
     };
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };
 
@@ -234,7 +222,6 @@ export const getTopMovies = async (page: number) => {
       currentPage: currentPage,
     };
   } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
+    return null;
   }
 };

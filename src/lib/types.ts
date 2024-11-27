@@ -8,8 +8,10 @@ export type AnimeProps = {
   favorites: number;
   genres: { name: string }[];
   images: {
-    large_image_url: string;
-    maximum_image_url: string;
+    webp: {
+      large_image_url: string;
+      maximum_image_url: string;
+    };
   };
   trailer: {
     images: {
