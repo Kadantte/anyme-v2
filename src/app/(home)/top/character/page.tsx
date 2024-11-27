@@ -13,7 +13,7 @@ export default function TopCharacterPage() {
   return (
     <div>
       <TopHeroSection
-        topHeroImage="/top-chara.png"
+        topHeroImage="/top-chara.webp"
         heroTitle="Top Characters"
         heroSubtitle="Fan-Favorite Anime Characters"
       />

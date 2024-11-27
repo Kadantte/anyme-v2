@@ -95,7 +95,7 @@ export default function ReviewContent({ reviewsList, scrollRef }: any) {
               </p>
               <div className="flex items-center gap-x-2">
                 <Image
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt="AnyMe."
                   width={100}
                   height={100}
