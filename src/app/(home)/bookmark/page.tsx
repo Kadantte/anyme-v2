@@ -1,6 +1,7 @@
 'use client';
 
 import { useBookmarkAnime } from '@/lib/store';
+import { toSlug } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -29,7 +30,9 @@ export default function BookmarkPage() {
                   className="w-full h-[300px] object-cover rounded-lg"
                 />
                 <Link
-                  href={`/detail/${bookmark.mal_id}`}
+                  href={`/detail/${bookmark.mal_id}?title=${toSlug(
+                    bookmark.title
+                  )}`}
                   className="text-neutral-100 text-[1rem] hover:underline"
                 >
                   {bookmark.title.length > 20
