@@ -1,23 +1,24 @@
 import { Button } from '@/components/ui/button';
+import { AnimeProps } from '@/lib/types';
 import { toSlug } from '@/lib/utils';
+import { motion } from 'framer-motion';
 import { Bookmark, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'nextjs-toploader/app';
 import { FaHeart, FaStar } from 'react-icons/fa6';
-import { motion } from 'framer-motion';
 
 export default function HeroContent({
   heroList,
   currentIndex,
 }: {
-  heroList: any;
+  heroList: { data: AnimeProps[] };
   currentIndex: number;
 }) {
   const router = useRouter();
 
   return (
     <>
-      {heroList?.data.slice(currentIndex, currentIndex + 1).map((hero: any) => (
+      {heroList?.data.slice(currentIndex, currentIndex + 1).map((hero) => (
         <div
           key={hero.mal_id}
           role="img"

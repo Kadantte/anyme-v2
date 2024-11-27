@@ -26,7 +26,6 @@ export default function SearchBar() {
     queryKey: ['search', query],
     queryFn: () => getAnimeSearch({ q: query }),
     enabled: query !== '',
-    gcTime: 1000,
   });
 
   const handleSearch = useDebouncedCallback((q: string) => {
