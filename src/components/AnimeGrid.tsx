@@ -13,12 +13,11 @@ export default function AnimeGrid({
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 md:gap-4">
       {data?.data.map((anime: any, index: number) => (
         <MotionLink
-          initial={{ opacity: 0, y: 60, scale: 0.5 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{
             opacity: { duration: 0.5 },
             y: { duration: 0.3 },
-            scale: { duration: 0.3 },
           }}
           viewport={{ once: true }}
           href={`/detail/${anime.mal_id}?title=${toSlug(anime.title)}`}
