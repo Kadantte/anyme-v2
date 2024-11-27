@@ -25,7 +25,7 @@ export default function TopCharacterContent({ topCharacterList }: any) {
           }}
           viewport={{ once: true }}
           key={chara.mal_id}
-          style={{ backgroundImage: `url(${chara.images.jpg.image_url})` }}
+          style={{ backgroundImage: `url(${chara.images.webp.image_url})` }}
           className="relative w-full h-[250px] md:h-[320px] bg-cover bg-center rounded-xl overflow-hidden group"
         >
           <Dialog>

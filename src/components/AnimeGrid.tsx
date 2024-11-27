@@ -24,7 +24,7 @@ export default function AnimeGrid({
           href={`/detail/${anime.mal_id}?title=${toSlug(anime.title)}`}
           key={`${anime.mal_id}-${index}`}
           className="relative h-[250px] md:h-[320px] w-full rounded-xl bg-cover overflow-hidden group cursor-pointer"
-          style={{ backgroundImage: `url(${anime.images.jpg.image_url})` }}
+          style={{ backgroundImage: `url(${anime.images.webp.image_url})` }}
         >
           <HoverCardEffect data={anime} />
           <div className="absolute h-full w-full bg-gradient-to-t from-neutral-900 via-transparent  top-0" />

@@ -54,7 +54,7 @@ export default function SeasonalAnimeContent({ seasonalList }: any) {
           >
             <HoverCardEffect data={seasonal} />
             <Image
-              src={seasonal.images.webp.large_image_url}
+              src={seasonal.images.webp.image_url}
               alt={seasonal.title}
               width={5000}
               height={5000}
