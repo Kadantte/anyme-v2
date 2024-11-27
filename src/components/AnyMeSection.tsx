@@ -32,13 +32,19 @@ export default function AnyMeSection() {
                   Follow us on
                 </span>
                 <div className="flex items-center gap-x-4 text-neutral-200">
-                  <Link href={'https://github.com/rfkyalf'}>
+                  <Link aria-label="GitHub" href={'https://github.com/rfkyalf'}>
                     <FaGithub className="size-5 md:size-5 lg:size-6 hover:text-violet-500" />
                   </Link>
-                  <Link href={'https://www.linkedin.com/in/rifkyalfarez'}>
+                  <Link
+                    aria-label="LinkedIn"
+                    href={'https://www.linkedin.com/in/rifkyalfarez'}
+                  >
                     <FaLinkedin className="size-5 md:size-5 lg:size-6 hover:text-violet-500" />
                   </Link>
-                  <Link href={'https://www.instagram.com/rfkyalf/'}>
+                  <Link
+                    aria-label="Instagram"
+                    href={'https://www.instagram.com/rfkyalf/'}
+                  >
                     <FaInstagram className="size-5 md:size-5 lg:size-6 hover:text-violet-500" />
                   </Link>
                 </div>

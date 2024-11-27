@@ -118,6 +118,7 @@ function FooterLink({ text, href }: { text: string; href: string }) {
   return (
     <Link
       href={href}
+      aria-label={text}
       className="text-neutral-200 hover:underline text-[0.8rem] md:text-[0.8rem] lg:text-[0.9rem]"
       target="_blank"
     >
@@ -131,13 +132,14 @@ function FooterBottom({ currentYear }: { currentYear: number }) {
     <div className="flex items-center justify-between border-t border-neutral-700 py-4">
       <span className="text-[0.9rem] md:text-[0.9rem] lg:text-[1rem] text-neutral-200">
         2024 - {currentYear}{' '}
-        <Link href={'/'} className="hover:underline">
+        <Link aria-label="AnyMe" href={'/'} className="hover:underline">
           AnyMe.
         </Link>{' '}
       </span>
       <span className="text-[0.9rem] md:text-[0.9rem] lg:text-[1rem] text-neutral-200 ">
         Powered by{' '}
         <Link
+          aria-label="Jikan API"
           href={'https://jikan.moe/'}
           target="_blank"
           className="hover:underline"
