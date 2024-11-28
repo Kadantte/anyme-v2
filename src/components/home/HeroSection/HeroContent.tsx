@@ -6,10 +6,10 @@ import { toSlug } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { Bookmark, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-import { useRouter } from 'nextjs-toploader/app';
 import { FaHeart, FaStar } from 'react-icons/fa6';
 import { useBookmarkAnime } from '@/lib/store';
 import { useShallow } from 'zustand/shallow';
+import { useRouter } from 'next-nprogress-bar';
 
 export default function HeroContent({
   heroList,

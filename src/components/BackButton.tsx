@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronLeft } from 'lucide-react';
-import { useRouter } from 'nextjs-toploader/app';
+import { useRouter } from 'next-nprogress-bar';
 
 export default function BackButton() {
   const router = useRouter();

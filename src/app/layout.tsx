@@ -1,9 +1,8 @@
-import ReactQueryProvider from '@/lib/ReactQueryProviders';
+import ReactQueryProvider from '@/providers/ReactQueryProviders';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
-import NextTopLoader from 'nextjs-toploader';
-
 import './globals.css';
+import ProgressBarProvider from '@/providers/ProgressBarProvider';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -39,17 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${montserrat.className}`}>
-        <NextTopLoader
-          color="#8b5cf6"
-          initialPosition={0.08}
-          crawlSpeed={200}
-          height={3}
-          crawl={true}
-          easing="ease"
-          speed={200}
-          shadow="0 0 10px #a78bfa, 0 0 5px #c4b5fd"
-        />
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <ProgressBarProvider>
+          <ReactQueryProvider>{children}</ReactQueryProvider>
+        </ProgressBarProvider>
       </body>
     </html>
   );
