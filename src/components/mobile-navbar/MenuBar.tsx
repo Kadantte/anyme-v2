@@ -79,13 +79,13 @@ export default function MenuBar() {
               </AccordionItem>
             </Accordion>
             <Link
-              href="/"
+              href="/bookmark"
               onClick={() => setIsOpen(false)}
               className={`text-neutral-100 text-[1rem] ${
-                pathname === '/signin' ? 'text-violet-500' : ''
+                pathname === '/bookmark' ? 'text-violet-500' : ''
               }`}
             >
-              Sign In
+              Bookmark
             </Link>
           </div>
         </div>

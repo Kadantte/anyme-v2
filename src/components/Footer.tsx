@@ -64,7 +64,7 @@ function QuickLinks() {
         Quick Links
       </h2>
       <FooterLink text="Home" href="/" />
-      <FooterLink text="Sign In" href="/signin" />
+      <FooterLink text="Bookmark" href="/bookmark" />
     </div>
   );
 }
