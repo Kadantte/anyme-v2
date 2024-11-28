@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-type BookmarkAnimeProps = {
+export type BookmarkAnimeProps = {
   mal_id: number;
   title: string;
   images: string;
