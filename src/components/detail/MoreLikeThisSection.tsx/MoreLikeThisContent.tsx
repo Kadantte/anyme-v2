@@ -24,6 +24,7 @@ export default function MoreLikeThisContent({
             width={5000}
             priority
             className="h-[210px] md:h-[230px] lg:h-[260px] xl:h-[320px] w-full rounded-xl object-cover"
+            loading="lazy"
           />
           <h2>
             {moreLike.entry.title.length > 20

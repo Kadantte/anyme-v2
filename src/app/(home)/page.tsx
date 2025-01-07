@@ -1,9 +1,17 @@
-import AnyMeSection from '@/components/AnyMeSection';
-import DiscoverGenreSection from '@/components/home/DiscoverGenreSection';
-import HeroSection from '@/components/home/HeroSection';
-import SeasonalAnimeSection from '@/components/home/SeasonalAnimeSection';
-import TopAnimeSection from '@/components/home/TopAnime';
-import TopCharacterSection from '@/components/home/TopCharacter';
+import dynamic from 'next/dynamic';
+
+const AnyMeSection = dynamic(() => import('@/components/AnyMeSection'));
+const DiscoverGenreSection = dynamic(
+  () => import('@/components/home/DiscoverGenreSection')
+);
+const HeroSection = dynamic(() => import('@/components/home/HeroSection'));
+const SeasonalAnimeSection = dynamic(
+  () => import('@/components/home/SeasonalAnimeSection')
+);
+const TopAnimeSection = dynamic(() => import('@/components/home/TopAnime'));
+const TopCharacterSection = dynamic(
+  () => import('@/components/home/TopCharacter')
+);
 
 export default function Home() {
   return (

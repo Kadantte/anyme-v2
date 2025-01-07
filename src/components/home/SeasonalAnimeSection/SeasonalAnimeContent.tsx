@@ -59,7 +59,7 @@ export default function SeasonalAnimeContent({ seasonalList }: any) {
               width={5000}
               height={5000}
               className="w-[220px] h-[320px] object-cover"
-              priority
+              loading="lazy"
             />
             <div className="absolute h-full w-full bg-gradient-to-t from-neutral-900 rounded-xl top-0" />
             <div className="absolute bottom-0 top-0 h-full w-full p-2 flex flex-col justify-between">

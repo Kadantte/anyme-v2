@@ -27,6 +27,7 @@ export default function BookmarkGrid({
             width={300}
             height={300}
             className="w-full h-[240px] object-cover rounded-xl"
+            loading="lazy"
           />
           <Link
             href={`/detail/${bookmark.mal_id}?title=${toSlug(bookmark.title)}`}

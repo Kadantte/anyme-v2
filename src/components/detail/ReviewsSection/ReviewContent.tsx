@@ -64,6 +64,7 @@ export default function ReviewContent({ reviewsList, scrollRef }: any) {
                     width={100}
                     height={100}
                     className="size-8 md:size-9 lg:size-10 rounded-full object-cover border border-neutral-50"
+                    loading="lazy"
                   />
                   <div className="flex flex-col">
                     <span className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-50">
@@ -100,6 +101,7 @@ export default function ReviewContent({ reviewsList, scrollRef }: any) {
                   width={100}
                   height={100}
                   className="size-8 md:size-9 lg:size-10 rounded-full object-cover border border-neutral-50"
+                  loading="lazy"
                 />
                 <div className="flex flex-col">
                   <span className="text-[0.8rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.05rem] text-neutral-50">

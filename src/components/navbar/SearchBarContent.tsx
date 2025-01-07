@@ -40,6 +40,7 @@ export default function SearchBarContent({
               width={1000}
               height={1000}
               className="min-h-[50px] min-w-[50px] w-[50px] h-[50px] object-cover rounded-lg"
+              loading="lazy"
             />
             <div>
               <h2 className="text-[0.9rem] text-neutral-300">{search.title}</h2>
