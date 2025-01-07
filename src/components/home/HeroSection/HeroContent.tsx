@@ -74,6 +74,7 @@ export default function HeroContent({
                   {hero.synopsis.substring(0, 200)}...&nbsp;
                   <Link
                     href={`/detail/${hero.mal_id}?title=${toSlug(hero.title)}`}
+                    title={`detail information about ${hero.title}`}
                     className="text-violet-500 hover:text-violet-600 transition-colors duration-300 ease-in-out font-bold"
                   >
                     Read More

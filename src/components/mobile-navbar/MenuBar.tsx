@@ -93,6 +93,7 @@ export default function MenuBar() {
           <Link
             onClick={() => setIsOpen(false)}
             href={'https://github.com/rfkyalf/anyme-v2'}
+            title="anyme github repo"
             className="text-neutral-200 hover:text-neutral-50"
           >
             <FaGithub className="size-6" />

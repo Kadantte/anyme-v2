@@ -62,6 +62,7 @@ export default function Navbar() {
             <SearchBar />
             <Link
               href={'https://github.com/rfkyalf/anyme-v2'}
+              title="anyme github repo"
               className="text-neutral-200 hover:text-violet-500"
             >
               <FaGithub className="size-6" />
